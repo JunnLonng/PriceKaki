@@ -170,7 +170,7 @@ header {
 /* Grid Layout for Main Content */
 .main-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
 }
 
@@ -260,9 +260,14 @@ header {
   .config-toolbar {
     flex-direction: row;
     align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .toolbar-group {
+    min-width: 200px;
   }
   .toolbar-group:last-child {
     flex: 2; /* Loyalty cards get a bit more width */
+    min-width: 280px;
   }
 }
 
@@ -274,6 +279,7 @@ header {
   padding: 1.5rem;
   box-shadow: var(--shadow);
   transition: var(--transition);
+  min-width: 0;
 }
 
 .panel-title {
@@ -417,22 +423,22 @@ header {
 /* Pricing Grid/Table */
 .pricing-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
 }
 
 @media (min-width: 640px) {
   .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1200px) {
   .pricing-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .pricing-grid.ev-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 
@@ -448,6 +454,7 @@ header {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  min-width: 0;
 }
 
 .station-card:hover {
@@ -642,13 +649,13 @@ header {
 
 .calc-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
 }
 
 @media (min-width: 768px) {
   .calc-grid {
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px minmax(0, 1fr);
     gap: 2rem;
   }
 }
@@ -882,8 +889,8 @@ footer {
   white-space: nowrap;
 }
 
-/* Mobile responsiveness adjustments for header navigation */
-@media (max-width: 640px) {
+/* Mobile responsiveness adjustments for screens < 768px */
+@media (max-width: 767px) {
   header {
     flex-direction: column;
     align-items: center;
@@ -917,10 +924,7 @@ footer {
   .nav-link {
     font-size: 0.8rem !important;
   }
-}
 
-/* Extra mobile responsiveness for small screens */
-@media (max-width: 768px) {
   .container {
     padding: 0.75rem;
   }
