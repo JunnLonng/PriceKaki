@@ -1,0 +1,38 @@
+name: Update Carpark Rates
+
+on:
+  schedule:
+    # Run weekly on Sundays at 2:00 AM SGT (SGT is UTC+8, so Saturday at 6:00 PM UTC)
+    - cron: '0 18 * * 6'
+  workflow_dispatch: # Allows manual trigger from Actions UI
+
+permissions:
+  contents: write # Required to push updates back to the repository
+
+jobs:
+  update-carparks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests
+
+      - name: Run Carpark Scraper Script
+        run: python scripts/scrape_carparks.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/parking_rates.json data/parking_rates.js
+          git diff-index --quiet HEAD || (git commit -m "chore: auto-update carpark rates" && git push)
