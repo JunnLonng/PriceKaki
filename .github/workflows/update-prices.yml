@@ -1,0 +1,38 @@
+name: Update Fuel Prices
+
+on:
+  schedule:
+    # Run at 12:00 AM and 12:00 PM SGT daily (SGT is UTC+8, so 4:00 PM and 4:00 AM UTC)
+    - cron: '0 4,16 * * *'
+  workflow_dispatch: # Allows manual trigger from Actions UI
+
+permissions:
+  contents: write # Required to push updates back to the repository
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run Scraper Script
+        run: python scripts/scrape_prices.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/petrol_data.json
+          git diff-index --quiet HEAD || (git commit -m "chore: auto-update petrol prices" && git push)

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('pricekaki_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <title>PriceKaki — Singapore Price Comparison Portal</title>
+  <meta name="description" content="Your daily companion for smart shopping and transport cost comparison in Singapore. Compare petrol price rebates, EV charging, and carpark rates.">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .portal-hero {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .portal-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .portal-hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem auto;
+      padding: 0 1rem;
+    }
+    .portal-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2.5rem 2rem;
+      cursor: pointer;
+      border-radius: 1.25rem;
+      border: 1px solid var(--surface-border);
+      background: var(--surface);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .portal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .portal-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary) !important;
+      box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.25);
+    }
+    .portal-card:hover::before {
+      opacity: 1;
+    }
+    .portal-card.ev-card::before {
+      background: var(--accent);
+    }
+    .portal-card.ev-card:hover {
+      border-color: var(--accent) !important;
+      box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.25);
+    }
+    .portal-card.carpark-card::before {
+      background: #6366f1;
+    }
+    .portal-card.carpark-card:hover {
+      border-color: #6366f1 !important;
+      box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
+    }
+    .card-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      transition: var(--transition);
+    }
+    .portal-card:hover .card-icon-wrapper {
+      transform: scale(1.1);
+    }
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    .card-btn {
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      width: 100%;
+      border-radius: 0.5rem;
+      padding: 0.8rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: white;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 1200px;">
+    <!-- Header -->
+    <header style="margin-bottom: 1rem;">
+      <div class="logo-section">
+        <h1>PriceKaki</h1>
+        <p>Singapore Smart Expense Comparison Hub</p>
+      </div>
+      <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+        <i data-lucide="sun" id="sunIcon"></i>
+        <i data-lucide="moon" id="moonIcon" style="display: none;"></i>
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="portal-hero">
+      <h1><i data-lucide="sparkles" style="color: var(--primary);"></i> PriceKaki Portal</h1>
+      <p>Compare costs, stack credit card cashbacks, and optimize your daily travel expenses across Singapore.</p>
+    </div>
+
+    <!-- Portal Grid -->
+    <div class="portal-grid">
+      <!-- Petrol Card -->
+      <div class="portal-card" onclick="window.location.href='petrol.html'">
+        <div class="card-icon-wrapper" style="background: rgba(59, 130, 246, 0.1); color: var(--primary);">
+          <i data-lucide="fuel" style="width: 28px; height: 28px;"></i>
+        </div>
+        <div class="card-title">Petrol Prices</div>
+        <div class="card-desc">
+          Compare daily pump prices for RON 92, 95, 98, Premium, and Diesel grades. Calculate and stack credit card rebates, loyalty programs, and find the cheapest refueling station.
+        </div>
+        <a href="petrol.html" class="card-btn" style="background: var(--primary);">
+          Open Petrol Kaki <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </a>
+      </div>
+
+      <!-- EV Card -->
+      <div class="portal-card ev-card" onclick="window.location.href='ev.html'">
+        <div class="card-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: var(--accent);">
+          <i data-lucide="zap" style="width: 28px; height: 28px;"></i>
+        </div>
+        <div class="card-title">EV Charging</div>
+        <div class="card-desc">
+          Compare AC and DC charger prices across SP Group, Shell Recharge, Charge+, and others. Calculate charging times, battery added ranges (km), and card rebates.
+        </div>
+        <a href="ev.html" class="card-btn" style="background: var(--accent);">
+          Open EV Kaki <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </a>
+      </div>
+
+      <!-- Carpark Card -->
+      <div class="portal-card carpark-card" onclick="window.location.href='carpark.html'">
+        <div class="card-icon-wrapper" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
+          <i data-lucide="parking-circle" style="width: 28px; height: 28px;"></i>
+        </div>
+        <div class="card-title">Carpark Rates</div>
+        <div class="card-desc">
+          Compare parking fees at 1,140+ malls, plazas, and office buildings. Search and geocode locations with OneMap, and check real-time available lots dynamically.
+        </div>
+        <a href="carpark.html" class="card-btn" style="background: #6366f1;">
+          Open Carpark Kaki <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align: center; margin-top: 2rem; border-top: 1px solid var(--surface-border); padding-top: 1.5rem; color: var(--text-muted); font-size: 0.85rem;">
+      <p>&copy; 2026 PriceKaki. Developed for smart Singaporean commuters.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Theme Management
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('pricekaki_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcons(savedTheme);
+    }
+
+    function updateThemeIcons(theme) {
+      if (theme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('pricekaki_theme', newTheme);
+      updateThemeIcons(newTheme);
+    });
+
+    // Run init
+    initTheme();
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

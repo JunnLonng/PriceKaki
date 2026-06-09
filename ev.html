@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('pricekaki_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <title>EV Kaki — Singapore EV Charging Comparison & Savings Calculator</title>
+  <meta name="description" content="Compare EV charging rates in Singapore for AC and DC chargers. Calculate charging time, savings, and credit card rebates.">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo-section">
+        <h1><i data-lucide="zap"></i> EV Kaki</h1>
+        <p>Singapore EV Charging Cost & Savings Calculator</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="index.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="home" style="width: 16px; height: 16px;"></i> Hub</a>
+        <a href="petrol.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="fuel" style="width: 16px; height: 16px;"></i> Petrol Prices</a>
+        <a href="carpark.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="parking-circle" style="width: 16px; height: 16px;"></i> Carparks</a>
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+          <i data-lucide="sun" id="sunIcon"></i>
+          <i data-lucide="moon" id="moonIcon" style="display: none;"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+      <!-- EV Price Comparisons Panel -->
+      <div class="panel dashboard-panel">
+        <div class="dashboard-header-bar" style="margin-bottom: 1rem;">
+          <h2 class="panel-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0; display: inline-flex;"><i data-lucide="zap"></i> Current EV Charging Rates</h2>
+          <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Last Updated: <span id="lastUpdatedDate">-</span></span>
+        </div>
+
+        <!-- Horizontal Config Toolbar (Credit Cards only, no Petrol loyalty) -->
+        <div class="config-toolbar">
+          <!-- Bank Selector -->
+          <div class="toolbar-group" style="flex: 1;">
+            <label for="bankSelect">Credit Card Issuer</label>
+            <select id="bankSelect" class="select-control">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <!-- Card Selector -->
+          <div class="toolbar-group" style="flex: 1;">
+            <label for="cardSelect">Select Your Card</label>
+            <select id="cardSelect" class="select-control" disabled>
+              <option value="">Choose a bank first...</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- EV Pricing Grids -->
+        <div id="evDashboard" style="margin-top: 1.5rem;">
+          <!-- AC Charging Section -->
+          <div class="ev-row-section" style="margin-bottom: 2rem;">
+            <h3 class="ev-row-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.4rem; color: var(--text-muted);"><i data-lucide="zap-off" style="width: 16px; height: 16px;"></i> AC Charging (7–22 kW)</h3>
+            <div class="pricing-grid ev-grid" id="evGridAc">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <!-- DC Fast Charging Section -->
+          <div class="ev-row-section">
+            <h3 class="ev-row-title" style="font-size: 1.05rem; font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.4rem; color: var(--primary);"><i data-lucide="zap" style="width: 16px; height: 16px;"></i> DC Fast Charging (50–120 kW+)</h3>
+            <div class="pricing-grid ev-grid" id="evGridDc">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EV Calculator Card -->
+      <div class="panel calculator-panel">
+        <h2 class="panel-title"><i data-lucide="calculator"></i> <span>EV Charging Calculator</span></h2>
+        
+        <div class="calc-info-note" id="calcInfoNote" style="display: none;">
+          <i data-lucide="info" style="width: 14px; height: 14px; flex-shrink: 0; margin-top: 1px;"></i>
+          <span class="note-text">
+            Calculations based on <strong>Best Deal</strong>&nbsp;(
+            <span id="calcStationBadge">
+              <span id="calcStationName">-</span>
+            </span>
+            ).
+          </span>
+        </div>
+        
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <!-- Mode: Spend vs Energy vs Duration -->
+            <div class="form-group">
+              <label>Top-up Target Type</label>
+              <div class="calc-mode-selector">
+                <button class="mode-btn active" id="modeSpend">By Spend (S$)</button>
+                <button class="mode-btn" id="modeVolume">By Energy (kWh)</button>
+                <button class="mode-btn" id="modeDuration">By Duration (Mins)</button>
+              </div>
+            </div>
+
+            <!-- Charger Speed Type Selector -->
+            <div class="form-group" id="chargerTypeGroup" style="margin-top: 1rem;">
+              <label>Charger Speed Type</label>
+              <div class="calc-mode-selector">
+                <button class="mode-btn active" id="chargerAc">AC (Slower)</button>
+                <button class="mode-btn" id="chargerDc">DC (Fast)</button>
+              </div>
+            </div>
+
+            <!-- Input Amount -->
+            <div class="form-group">
+              <label id="amountLabel" for="calcAmount">Target Spend Amount (S$)</label>
+              <input type="number" id="calcAmount" class="select-control" value="20" min="1" step="any">
+            </div>
+          </div>
+
+          <!-- Output Results List -->
+          <div class="calc-results-list" id="calcResultsList">
+            <!-- Dynamically populated comparison rows -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 PriceKaki. Built for Singapore drivers. Prices fetched auto-daily via GitHub Actions.</p>
+      <p style="font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.8;">Disclaimer: Base prices fluctuate. Always verify details with official apps before recharging.</p>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript App -->
+  <script src="scripts/database.js"></script>
+  <script src="scripts/calculator.js"></script>
+  <script src="scripts/ev_app.js"></script>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

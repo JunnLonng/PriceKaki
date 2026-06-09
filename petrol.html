@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('pricekaki_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <title>Petrol Price Kaki — Singapore Petrol Price & Credit Card Discount Calculator</title>
+  <meta name="description" content="Find the cheapest petrol station in Singapore. Stack credit card discounts, loyalty cards, and calculate your effective fuel savings.">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo-section">
+        <h1><i data-lucide="fuel"></i> Petrol Kaki</h1>
+        <p>Singapore Petrol Price & Fuel Rebate Calculator</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="index.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="home" style="width: 16px; height: 16px;"></i> Hub</a>
+        <a href="ev.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="zap" style="width: 16px; height: 16px;"></i> EV Charging</a>
+        <a href="carpark.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="parking-circle" style="width: 16px; height: 16px;"></i> Carparks</a>
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+          <i data-lucide="sun" id="sunIcon"></i>
+          <i data-lucide="moon" id="moonIcon" style="display: none;"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+      <!-- Combined Card, Loyalty & Price comparisons Panel -->
+      <div class="panel dashboard-panel">
+        <div class="dashboard-header-bar">
+          <h2 class="panel-title" id="dashboardTitle" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0; display: inline-flex;"><i data-lucide="fuel"></i> Current Petrol Prices</h2>
+          <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Last Updated: <span id="lastUpdatedDate">-</span></span>
+        </div>
+
+        <!-- Horizontal Config Toolbar -->
+        <div class="config-toolbar">
+          <!-- Bank Selector -->
+          <div class="toolbar-group">
+            <label for="bankSelect">Credit Card Issuer</label>
+            <select id="bankSelect" class="select-control">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <!-- Card Selector -->
+          <div class="toolbar-group">
+            <label for="cardSelect">Select Your Card</label>
+            <select id="cardSelect" class="select-control" disabled>
+              <option value="">Choose a bank first...</option>
+            </select>
+          </div>
+
+          <!-- Loyalty Cards -->
+          <div class="toolbar-group" id="loyaltyGroup">
+            <label>Select Loyalty Card(s)</label>
+            <div class="loyalty-chips">
+              <label class="chip-label">
+                <input type="checkbox" id="essoSmiles">
+                <span>Esso Smiles</span>
+              </label>
+              <label class="chip-label">
+                <input type="checkbox" id="shellGo">
+                <span>Shell GO+</span>
+              </label>
+              <label class="chip-label">
+                <input type="checkbox" id="spcAndU">
+                <span>SPC&U</span>
+              </label>
+              <label class="chip-label">
+                <input type="checkbox" id="linkRewards">
+                <span>Link Rewards</span>
+              </label>
+              <label class="chip-label">
+                <input type="checkbox" id="sinopecX">
+                <span>Sinopec X</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fuel Grade Selectors -->
+        <div class="tabs-container" id="fuelTabs" style="margin-top: 1.5rem;">
+          <button class="tab-btn" data-grade="ron92">RON 92</button>
+          <button class="tab-btn active" data-grade="ron95">RON 95</button>
+          <button class="tab-btn" data-grade="ron98">RON 98</button>
+          <button class="tab-btn" data-grade="premium">Premium</button>
+          <button class="tab-btn" data-grade="diesel">Diesel</button>
+        </div>
+
+        <!-- Best Deal Banner -->
+        <div class="best-deal-banner" id="bestDealBanner" style="display: none; margin-top: 1rem;">
+          <i data-lucide="sparkles"></i>
+          <div>
+            <div class="title">Best Deal For You</div>
+            <div class="desc" id="bestDealText">Loading deal recommendation...</div>
+          </div>
+        </div>
+
+        <!-- Petrol Pricing Grid -->
+        <div class="pricing-grid" id="pricingGrid" style="margin-top: 1rem;">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Refueling Cost Calculator Card -->
+      <div class="panel calculator-panel">
+        <h2 class="panel-title"><i data-lucide="calculator"></i> <span id="calcTitle">Refueling Calculator</span></h2>
+        
+        <div class="calc-info-note" id="calcInfoNote" style="display: none;">
+          <i data-lucide="info" style="width: 14px; height: 14px; flex-shrink: 0; margin-top: 1px;"></i>
+          <span class="note-text">
+            Calculations based on <strong>Best Deal</strong>&nbsp;(
+            <span id="calcStationBadge">
+              <img id="calcStationLogo" src="" alt="" onerror="this.style.display='none';">
+              <span id="calcStationName">-</span>
+            </span>
+            ).
+          </span>
+        </div>
+        
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <!-- Mode: Litres vs Spend -->
+            <div class="form-group">
+              <label>Top-up Target Type</label>
+              <div class="calc-mode-selector">
+                <button class="mode-btn active" id="modeSpend">By Spend (S$)</button>
+                <button class="mode-btn" id="modeVolume">By Volume (L)</button>
+              </div>
+            </div>
+
+            <!-- Input Amount -->
+            <div class="form-group">
+              <label id="amountLabel" for="calcAmount">Target Spend Amount (S$)</label>
+              <input type="number" id="calcAmount" class="select-control" value="80" min="1" step="any">
+            </div>
+          </div>
+
+          <!-- Output Results List -->
+          <div class="calc-results-list" id="calcResultsList">
+            <!-- Dynamically populated comparison rows -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 PriceKaki. Built for Singapore drivers. Prices fetched auto-daily via GitHub Actions.</p>
+      <p style="font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.8;">Disclaimer: Base prices fluctuate. Always verify details with official apps before fueling.</p>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript App -->
+  <script src="scripts/database.js"></script>
+  <script src="scripts/calculator.js"></script>
+  <script src="scripts/petrol_app.js"></script>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
