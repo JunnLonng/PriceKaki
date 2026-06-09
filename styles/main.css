@@ -914,3 +914,70 @@ footer {
     font-size: 0.8rem !important;
   }
 }
+
+/* Extra mobile responsiveness for small screens */
+@media (max-width: 520px) {
+  .container {
+    padding: 0.75rem;
+  }
+  
+  .panel {
+    padding: 1rem;
+  }
+  
+  .config-toolbar {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .calc-result-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .calc-result-row .left-info {
+    width: 100%;
+  }
+
+  .calc-result-row .center-math {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 0;
+    border-top: 1px dashed var(--surface-border);
+    padding-top: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .calc-result-row .center-math .primary-val {
+    font-size: 0.9rem;
+  }
+
+  .calc-result-row .center-math .secondary-val {
+    font-size: 0.75rem;
+    text-align: right;
+  }
+
+  .calc-result-row .right-savings {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: unset;
+    border-top: 1px dashed var(--surface-border);
+    padding-top: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .calc-result-row .right-savings .savings-amt {
+    font-size: 0.9rem;
+  }
+
+  .calc-result-row .right-savings .outlay-amt {
+    font-size: 0.75rem;
+    text-align: right;
+  }
+}
