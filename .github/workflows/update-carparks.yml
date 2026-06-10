@@ -34,4 +34,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/parking_rates.json data/parking_rates.js
-          git diff-index --quiet HEAD || (git commit -m "chore: auto-update carpark rates" && git push)
+          git diff-index --quiet HEAD || (git commit -m "chore: auto-update carpark rates" && git pull --rebase origin main && git push)

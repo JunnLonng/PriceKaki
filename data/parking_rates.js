@@ -71829,100 +71829,44 @@ const PARKING_RATES_DATA = [
     "isClosedText": false
   },
   {
-    "id": "359",
-    "name": "The Aquarius",
+    "id": "955",
+    "name": "The Sports Stage",
     "road": null,
-    "address": "21 Science Park Road, S(117628)",
-    "postalCode": "117628",
+    "address": "200 Pandan Gardens, S(609336)",
+    "postalCode": "609336",
     "location": {
-      "lat": 1.289011,
-      "lng": 103.781052
+      "lat": 1.32114,
+      "lng": 103.746834
     },
     "textRates": {
-      "wd1": "*Building Demolished*",
-      "wd2": "*Building Demolished*",
+      "wd1": "$1.40 for 1st hr, $0.60 for next subsequent 30min from 7am to 7pm",
+      "wd2": "$1.40 for 1st hr, $0.60 for next subsequent 30min from 7pm to 7am the following day",
       "sat1": null,
       "sat2": null,
       "sun1": null,
       "sun2": null,
-      "remarks": "*Land is Vacant Space*"
-    },
-    "rates": {
-      "car": {
-        "weekday": [],
-        "saturday": [],
-        "sunday": []
-      },
-      "motorcycle": {
-        "weekday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "saturday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "sunday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ]
-      }
-    },
-    "isPrivate": false,
-    "isSeasonOnly": false,
-    "isClosedText": false
-  },
-  {
-    "id": "364",
-    "name": "The Aries",
-    "road": null,
-    "address": "51 Science Park Road, S(117586)",
-    "postalCode": "117586",
-    "location": {
-      "lat": 1.287411,
-      "lng": 103.782997
-    },
-    "textRates": {
-      "wd1": "$1.60 for 1st hr, $1.07 for next subsequent 30min from 7.30am to 7.30pm",
-      "wd2": "Free parking from 7.30pm to 7.30am the following day",
-      "sat1": null,
-      "sat2": null,
-      "sun1": null,
-      "sun2": null,
-      "remarks": "10min grace period"
+      "remarks": null
     },
     "rates": {
       "car": {
         "weekday": [
           {
-            "start": "07:30",
-            "end": "19:30",
+            "start": "07:00",
+            "end": "19:00",
             "type": "hourly",
             "first_unit": 60,
-            "first_rate": 1.6,
+            "first_rate": 1.4,
             "subseq_unit": 30,
-            "subseq_rate": 1.07
+            "subseq_rate": 0.6
           },
           {
-            "start": "19:30",
-            "end": "07:30",
+            "start": "19:00",
+            "end": "07:00",
             "type": "hourly",
             "first_unit": 60,
-            "first_rate": 7.3,
-            "subseq_unit": 60,
-            "subseq_rate": 7.3
+            "first_rate": 1.4,
+            "subseq_unit": 30,
+            "subseq_rate": 0.6
           }
         ],
         "saturday": [],
@@ -71960,41 +71904,41 @@ const PARKING_RATES_DATA = [
     "isClosedText": false
   },
   {
-    "id": "412",
-    "name": "The Atrium @ Orchard",
+    "id": "311",
+    "name": "United Square Shopping Mall",
     "road": null,
-    "address": "60 Orchard Road, S(238889)",
-    "postalCode": "238889",
+    "address": "101 Thomson Road, S(307591)",
+    "postalCode": "307591",
     "location": {
-      "lat": 1.299437,
-      "lng": 103.845619
+      "lat": 1.317168,
+      "lng": 103.843636
     },
     "textRates": {
-      "wd1": "$1.95 for 1st hr, $0.55 for next subsequent 15min from 12midnight to 5.59pm",
-      "wd2": "$3.25/entry from 6pm to 11.59pm",
+      "wd1": "$2.40 for 1st hr, $0.60 for next subsequent 15min from 6am to 6pm",
+      "wd2": "$2.60/entry from 6pm to 6am the following day",
       "sat1": null,
       "sat2": null,
       "sun1": null,
       "sun2": null,
-      "remarks": ""
+      "remarks": "15min grace period"
     },
     "rates": {
       "car": {
         "weekday": [
           {
-            "start": "08:00",
-            "end": "17:59",
+            "start": "06:00",
+            "end": "18:00",
             "type": "hourly",
             "first_unit": 60,
-            "first_rate": 1.95,
+            "first_rate": 2.4,
             "subseq_unit": 15,
-            "subseq_rate": 0.55
+            "subseq_rate": 0.6
           },
           {
             "start": "18:00",
-            "end": "23:59",
+            "end": "06:00",
             "type": "flat",
-            "first_rate": 3.25
+            "first_rate": 2.6
           }
         ],
         "saturday": [],
@@ -72032,14 +71976,14 @@ const PARKING_RATES_DATA = [
     "isClosedText": false
   },
   {
-    "id": "565",
-    "name": "The Battle Box",
+    "id": "782",
+    "name": "Woodlands East Industrial Estate",
     "road": null,
-    "address": "51 Canning Rise, S(179872)",
-    "postalCode": "179872",
+    "address": "20 Woodlands Link, S(738733) ",
+    "postalCode": "738733",
     "location": {
-      "lat": 1.295467,
-      "lng": 103.847275
+      "lat": 1.45348,
+      "lng": 103.812126
     },
     "textRates": {
       "wd1": "HDB / URA parking rates",
@@ -72048,242 +71992,11 @@ const PARKING_RATES_DATA = [
       "sat2": null,
       "sun1": null,
       "sun2": null,
-      "remarks": "Rates shown is for the car park at Fort Canning Park (Percival Road Car Park B)"
+      "remarks": null
     },
     "rates": {
       "car": {
         "weekday": [],
-        "saturday": [],
-        "sunday": []
-      },
-      "motorcycle": {
-        "weekday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "saturday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "sunday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ]
-      }
-    },
-    "isPrivate": false,
-    "isSeasonOnly": false,
-    "isClosedText": false
-  },
-  {
-    "id": "199",
-    "name": "The Bencoolen",
-    "road": null,
-    "address": "180 Bencoolen Street, S(189646)",
-    "postalCode": "189646",
-    "location": {
-      "lat": 1.301661,
-      "lng": 103.853355
-    },
-    "textRates": {
-      "wd1": "$1.62/30min from 6am to 5pm",
-      "wd2": "$1.62/hr from 5pm to 11pm, $3.25/entry from 11pm to 6am the following day",
-      "sat1": null,
-      "sat2": null,
-      "sun1": null,
-      "sun2": null,
-      "remarks": "No grace period"
-    },
-    "rates": {
-      "car": {
-        "weekday": [
-          {
-            "start": "06:00",
-            "end": "17:00",
-            "type": "hourly",
-            "first_unit": 30,
-            "first_rate": 1.62,
-            "subseq_unit": 30,
-            "subseq_rate": 1.62
-          },
-          {
-            "start": "17:00",
-            "end": "23:00",
-            "type": "hourly",
-            "first_unit": 60,
-            "first_rate": 1.62,
-            "subseq_unit": 60,
-            "subseq_rate": 1.62
-          },
-          {
-            "start": "23:00",
-            "end": "06:00",
-            "type": "flat",
-            "first_rate": 3.25
-          }
-        ],
-        "saturday": [],
-        "sunday": []
-      },
-      "motorcycle": {
-        "weekday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "saturday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "sunday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ]
-      }
-    },
-    "isPrivate": false,
-    "isSeasonOnly": false,
-    "isClosedText": false
-  },
-  {
-    "id": "997",
-    "name": "The Brooks I",
-    "road": null,
-    "address": "60 Springside Walk, S(786020)",
-    "postalCode": "786020",
-    "location": {
-      "lat": 1.404697,
-      "lng": 103.819427
-    },
-    "textRates": {
-      "wd1": "$1.40 for 1st hr, $0.70 for next subsequent 30min from 7am to 5pm ",
-      "wd2": "$1.40 for 1st hr, $0.70 for next subsequent 30min from 5pm to 7am the following day",
-      "sat1": null,
-      "sat2": null,
-      "sun1": null,
-      "sun2": null,
-      "remarks": null
-    },
-    "rates": {
-      "car": {
-        "weekday": [
-          {
-            "start": "07:00",
-            "end": "17:00",
-            "type": "hourly",
-            "first_unit": 60,
-            "first_rate": 1.4,
-            "subseq_unit": 30,
-            "subseq_rate": 0.7
-          },
-          {
-            "start": "17:00",
-            "end": "07:00",
-            "type": "hourly",
-            "first_unit": 60,
-            "first_rate": 1.4,
-            "subseq_unit": 30,
-            "subseq_rate": 0.7
-          }
-        ],
-        "saturday": [],
-        "sunday": []
-      },
-      "motorcycle": {
-        "weekday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "saturday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ],
-        "sunday": [
-          {
-            "start": "00:00",
-            "end": "23:59",
-            "type": "flat",
-            "first_rate": 1.3
-          }
-        ]
-      }
-    },
-    "isPrivate": false,
-    "isSeasonOnly": false,
-    "isClosedText": false
-  },
-  {
-    "id": "998",
-    "name": "The Brooks II",
-    "road": null,
-    "address": "25 Springside Green, S(786015)",
-    "postalCode": "786015",
-    "location": {
-      "lat": 1.403969,
-      "lng": 103.818932
-    },
-    "textRates": {
-      "wd1": "$1.40 for 1st hr, $0.70 for next subsequent 30min from 7am to 5pm ",
-      "wd2": "$1.40 for 1st hr, $0.70 for next subsequent 30min from 5pm to 7am the following day",
-      "sat1": null,
-      "sat2": null,
-      "sun1": null,
-      "sun2": null,
-      "remarks": null
-    },
-    "rates": {
-      "car": {
-        "weekday": [
-          {
-            "start": "07:00",
-            "end": "17:00",
-            "type": "hourly",
-            "first_unit": 60,
-            "first_rate": 1.4,
-            "subseq_unit": 30,
-            "subseq_rate": 0.7
-          },
-          {
-            "start": "17:00",
-            "end": "07:00",
-            "type": "hourly",
-            "first_unit": 60,
-            "first_rate": 1.4,
-            "subseq_unit": 30,
-            "subseq_rate": 0.7
-          }
-        ],
         "saturday": [],
         "sunday": []
       },
