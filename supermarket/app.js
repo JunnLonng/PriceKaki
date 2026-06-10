@@ -4,7 +4,6 @@
 const state = {
   products: [],
   metadata: {},
-  basket: [], // Array of product IDs in basket
   filters: {
     search: '',
     category: 'all',
@@ -20,13 +19,6 @@ const categoryPills = document.getElementById('categoryPills');
 const lastUpdatedDateEl = document.getElementById('lastUpdatedDate');
 const warningBanner = document.getElementById('warningBanner');
 const failedSourcesEl = document.getElementById('failedSources');
-const basketPanel = document.getElementById('basketPanel');
-const basketItemList = document.getElementById('basketItemList');
-const totalFairPriceEl = document.getElementById('totalFairPrice');
-const totalShengSiongEl = document.getElementById('totalShengSiong');
-const totalCardFairPrice = document.getElementById('totalCardFairPrice');
-const totalCardShengSiong = document.getElementById('totalCardShengSiong');
-const basketSummaryWinner = document.getElementById('basketSummaryWinner');
 const themeToggleBtn = document.getElementById('themeToggle');
 const sunIcon = document.getElementById('sunIcon');
 const moonIcon = document.getElementById('moonIcon');
@@ -98,7 +90,7 @@ function updateMetadataUI() {
   if (state.metadata.sources) {
     for (const source in state.metadata.sources) {
       if (state.metadata.sources[source].status === 'failed') {
-        const sourceDisplayName = source === 'fairprice' ? 'NTUC FairPrice' : 'Sheng Siong';
+        const sourceDisplayName = source === 'fairprice' ? 'NTUC (FairPrice)' : 'Sheng Siong';
         failedSources.push(sourceDisplayName);
       }
     }
@@ -187,9 +179,12 @@ function renderProducts() {
     const card = document.createElement('div');
     card.className = 'product-card';
     
-    // Resolve prices
+    // Resolve prices and URLs
     const fpPrice = p.prices.fairprice?.price;
+    const fpUrl = p.prices.fairprice?.url || 'https://www.fairprice.com.sg/';
+    
     const ssPrice = p.prices.shengsiong?.price;
+    const ssUrl = p.prices.shengsiong?.url || 'https://shengsiong.com.sg/';
     
     // Determine cheapest
     const hasBoth = fpPrice !== undefined && ssPrice !== undefined;
@@ -199,14 +194,8 @@ function renderProducts() {
     const fpClass = isFpCheaper ? 'cheapest-store' : '';
     const ssClass = isSsCheaper ? 'cheapest-store' : '';
     
-    // Check if item is already in basket
-    const isInBasket = state.basket.includes(p.id);
-    const basketBtnText = isInBasket ? 'Added to Basket' : 'Add to Basket';
-    const basketBtnClass = isInBasket ? 'basket-add-btn added' : 'basket-add-btn';
-    const basketIcon = isInBasket ? 'check' : 'shopping-cart';
-    
-    const fpBadge = isFpCheaper ? '<span style="background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 0.25rem; margin-left: 0.4rem; vertical-align: middle;">Cheapest</span>' : '';
-    const ssBadge = isSsCheaper ? '<span style="background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 0.25rem; margin-left: 0.4rem; vertical-align: middle;">Cheapest</span>' : '';
+    const fpBadge = isFpCheaper ? '<span style="background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Cheapest</span>' : '';
+    const ssBadge = isSsCheaper ? '<span style="background: var(--accent); color: white; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Cheapest</span>' : '';
 
     card.innerHTML = `
       <div>
@@ -216,41 +205,28 @@ function renderProducts() {
         <div class="product-category-tag">${p.category.replace('_', ' & ')}</div>
         <div class="product-title" title="${p.name}">${p.name}</div>
         
-        <table class="price-compare-table">
-          <tr class="price-compare-row ${fpClass}">
-            <td class="store-name" style="display: flex; align-items: center; gap: 0.4rem; height: 1.8rem;">
-              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #3b82f6;"></span>
-              <span>FairPrice</span>
-            </td>
-            <td class="store-val">
-              ${fpPrice ? `S$ ${fpPrice.toFixed(2)}` : 'N/A'}${fpBadge}
-            </td>
-          </tr>
-          <tr class="price-compare-row ${ssClass}">
-            <td class="store-name" style="display: flex; align-items: center; gap: 0.4rem; height: 1.8rem;">
-              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span>
+        <div class="price-compare-list">
+          <a href="${fpUrl}" target="_blank" rel="noopener noreferrer" class="price-compare-row ${fpClass}">
+            <div class="store-name">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NTUC_Fairprice_logo.svg/250px-NTUC_Fairprice_logo.svg.png" alt="NTUC (FairPrice)" class="store-logo-img">
+              <span>NTUC (FairPrice)</span>
+            </div>
+            <div class="store-val">
+              <span>${fpPrice ? `S$ ${fpPrice.toFixed(2)}` : 'N/A'}</span>${fpBadge}
+            </div>
+          </a>
+          <a href="${ssUrl}" target="_blank" rel="noopener noreferrer" class="price-compare-row ${ssClass}">
+            <div class="store-name">
+              <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Sheng_Siong_logo.png/250px-Sheng_Siong_logo.png" alt="Sheng Siong" class="store-logo-img">
               <span>Sheng Siong</span>
-            </td>
-            <td class="store-val">
-              ${ssPrice ? `S$ ${ssPrice.toFixed(2)}` : 'N/A'}${ssBadge}
-            </td>
-          </tr>
-        </table>
-      </div>
-      
-      <div>
-        <button class="${basketBtnClass}" data-id="${p.id}">
-          <i data-lucide="${basketIcon}" style="width: 15px; height: 15px;"></i>
-          <span>${basketBtnText}</span>
-        </button>
+            </div>
+            <div class="store-val">
+              <span>${ssPrice ? `S$ ${ssPrice.toFixed(2)}` : 'N/A'}</span>${ssBadge}
+            </div>
+          </a>
+        </div>
       </div>
     `;
-    
-    // Setup add-to-basket button listener
-    const addBtn = card.querySelector('.basket-add-btn');
-    addBtn.addEventListener('click', () => {
-      toggleBasketItem(p.id);
-    });
     
     productGrid.appendChild(card);
   });
@@ -283,96 +259,6 @@ function setupEventListeners() {
       renderProducts();
     });
   });
-}
-
-// Toggle Basket Item
-function toggleBasketItem(productId) {
-  const idx = state.basket.indexOf(productId);
-  if (idx > -1) {
-    state.basket.splice(idx, 1);
-  } else {
-    state.basket.push(productId);
-  }
-  
-  // Update UI lists and calculations
-  updateBasketUI();
-  renderProducts(); // Refresh add/added states on grids
-}
-
-// Update Basket Calculator UI panel
-function updateBasketUI() {
-  if (state.basket.length === 0) {
-    basketPanel.style.display = 'none';
-    return;
-  }
-  
-  basketPanel.style.display = 'block';
-  basketItemList.innerHTML = '';
-  
-  let totalFP = 0;
-  let totalSS = 0;
-  let hasFpMissing = false;
-  let hasSsMissing = false;
-  
-  state.basket.forEach(pId => {
-    const product = state.products.find(p => p.id === pId);
-    if (!product) return;
-    
-    const fpPrice = product.prices.fairprice?.price;
-    const ssPrice = product.prices.shengsiong?.price;
-    
-    if (fpPrice !== undefined) totalFP += fpPrice; else hasFpMissing = true;
-    if (ssPrice !== undefined) totalSS += ssPrice; else hasSsMissing = true;
-    
-    // Create list row in calculator
-    const row = document.createElement('div');
-    row.className = 'basket-item';
-    row.innerHTML = `
-      <span style="font-weight: 550; display: inline-block; max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${product.name}</span>
-      <div style="display: flex; align-items: center; gap: 0.6rem;">
-        <span style="font-size: 0.8rem; color: var(--text-muted);">
-          FP: ${fpPrice ? `S$${fpPrice.toFixed(2)}` : '-'} | SS: ${ssPrice ? `S$${ssPrice.toFixed(2)}` : '-'}
-        </span>
-        <button class="remove-btn" title="Remove Item">
-          <i data-lucide="trash-2" style="width: 13px; height: 13px;"></i>
-        </button>
-      </div>
-    `;
-    
-    row.querySelector('.remove-btn').addEventListener('click', () => {
-      toggleBasketItem(pId);
-    });
-    
-    basketItemList.appendChild(row);
-  });
-  
-  // Display totals
-  totalFairPriceEl.textContent = hasFpMissing ? 'N/A (Missing rates)' : `S$ ${totalFP.toFixed(2)}`;
-  totalShengSiongEl.textContent = hasSsMissing ? 'N/A (Missing rates)' : `S$ ${totalSS.toFixed(2)}`;
-  
-  // Highlight winner store card
-  totalCardFairPrice.classList.remove('winner');
-  totalCardShengSiong.classList.remove('winner');
-  basketSummaryWinner.style.display = 'none';
-  
-  if (!hasFpMissing && !hasSsMissing) {
-    if (totalFP < totalSS) {
-      totalCardFairPrice.classList.add('winner');
-      basketSummaryWinner.style.display = 'block';
-      const saving = totalSS - totalFP;
-      basketSummaryWinner.textContent = `FairPrice is S$ ${saving.toFixed(2)} cheaper for this basket!`;
-    } else if (totalSS < totalFP) {
-      totalCardShengSiong.classList.add('winner');
-      basketSummaryWinner.style.display = 'block';
-      const saving = totalFP - totalSS;
-      basketSummaryWinner.textContent = `Sheng Siong is S$ ${saving.toFixed(2)} cheaper for this basket!`;
-    } else {
-      basketSummaryWinner.style.display = 'block';
-      basketSummaryWinner.textContent = `Both stores have the exact same total price!`;
-    }
-  }
-  
-  lucide.createIcons();
 }
 
 // Start application on page load

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "10 Jun 2026, 12:41 PM SGT",
+    "lastUpdated": "10 Jun 2026, 01:02 PM SGT",
     "sources": {
       "fairprice": {
         "status": "failed",
@@ -8,7 +8,7 @@
       },
       "shengsiong": {
         "status": "success",
-        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
       }
     }
   },
@@ -17,7 +17,7 @@
       "id": "meiji-fresh-milk-2l",
       "name": "Meiji Fresh Milk 2L",
       "category": "dairy_eggs",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/501309.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/888/807/061/3349/front_en.11.400.jpg",
       "prices": {
         "fairprice": {
           "price": 6.15,
@@ -27,7 +27,7 @@
         "shengsiong": {
           "price": 5.95,
           "url": "https://shengsiong.com.sg/product/meiji-fresh-milk-2l",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -35,7 +35,7 @@
       "id": "gardenia-enriched-white-bread-400g",
       "name": "Gardenia Enriched White Bread 400g",
       "category": "bakery_bread",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1172825.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/888/824/710/1006/front_en.16.400.jpg",
       "prices": {
         "fairprice": {
           "price": 2.1,
@@ -45,7 +45,7 @@
         "shengsiong": {
           "price": 2.05,
           "url": "https://shengsiong.com.sg/product/gardenia-enriched-white-bread-400g",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -53,7 +53,7 @@
       "id": "milo-active-go-powder-900g",
       "name": "Milo Active-Go Powder 900g",
       "category": "beverages",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/502127.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/888/647/400/1009/front_en.13.400.jpg",
       "prices": {
         "fairprice": {
           "price": 8.95,
@@ -63,7 +63,7 @@
         "shengsiong": {
           "price": 8.5,
           "url": "https://shengsiong.com.sg/product/milo-active-go-powder-900g",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -71,7 +71,7 @@
       "id": "first-choice-eggs-10s",
       "name": "First Choice Premium Eggs 10s (600g)",
       "category": "dairy_eggs",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1689849.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Eggs_in_basket.jpg/320px-Eggs_in_basket.jpg",
       "prices": {
         "fairprice": {
           "price": 3.4,
@@ -81,7 +81,7 @@
         "shengsiong": {
           "price": 3.25,
           "url": "https://shengsiong.com.sg/product/first-choice-fresh-eggs-10s",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -89,7 +89,7 @@
       "id": "pokka-green-tea-1-5l",
       "name": "Pokka Green Tea Jasmine 1.5L",
       "category": "beverages",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1151603.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/888/819/910/2434/front_en.8.400.jpg",
       "prices": {
         "fairprice": {
           "price": 2.4,
@@ -99,7 +99,7 @@
         "shengsiong": {
           "price": 2.25,
           "url": "https://shengsiong.com.sg/product/pokka-jasmine-green-tea-1-5l",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -107,7 +107,7 @@
       "id": "maggi-instant-noodles-curry-5s",
       "name": "Maggi 2-Min Curry Noodles 5x79g",
       "category": "cooking_essentials",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/502010.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/955/600/111/9855/front_en.6.400.jpg",
       "prices": {
         "fairprice": {
           "price": 2.95,
@@ -117,7 +117,7 @@
         "shengsiong": {
           "price": 2.85,
           "url": "https://shengsiong.com.sg/product/maggi-2-min-curry-noodles-5s",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -125,7 +125,7 @@
       "id": "scs-salted-butter-250g",
       "name": "SCS Salted Butter 250g",
       "category": "dairy_eggs",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1183344.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/931/007/500/1626/front_en.17.400.jpg",
       "prices": {
         "fairprice": {
           "price": 6.45,
@@ -135,7 +135,7 @@
         "shengsiong": {
           "price": 6.2,
           "url": "https://shengsiong.com.sg/product/scs-salted-butter-250g",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -143,7 +143,7 @@
       "id": "naturel-canola-oil-2l",
       "name": "Naturel Pure Canola Oil 2L",
       "category": "cooking_essentials",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1691129.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/888/809/015/0053/front_en.3.400.jpg",
       "prices": {
         "fairprice": {
           "price": 9.5,
@@ -153,7 +153,7 @@
         "shengsiong": {
           "price": 8.95,
           "url": "https://shengsiong.com.sg/product/naturel-canola-oil-2l",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -161,7 +161,7 @@
       "id": "sensodyne-toothpaste-100g",
       "name": "Sensodyne Multi Care Toothpaste 100g",
       "category": "household_personal",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1175655.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/931/007/601/4502/front_en.5.400.jpg",
       "prices": {
         "fairprice": {
           "price": 8.2,
@@ -171,7 +171,7 @@
         "shengsiong": {
           "price": 7.95,
           "url": "https://shengsiong.com.sg/product/sensodyne-toothpaste-100g",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -179,7 +179,7 @@
       "id": "dynamo-detergent-liquid-2-7kg",
       "name": "Dynamo Liquid Power Gel Detergent 2.7kg",
       "category": "household_personal",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1151216.jpg",
+      "image": "https://images.openfoodfacts.org/images/products/490/243/090/6907/front_en.3.400.jpg",
       "prices": {
         "fairprice": {
           "price": 13.5,
@@ -189,7 +189,7 @@
         "shengsiong": {
           "price": 12.9,
           "url": "https://shengsiong.com.sg/product/dynamo-power-gel-detergent-2-7kg",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -197,7 +197,7 @@
       "id": "envy-apples-5s",
       "name": "Envy Apples 5s Pack",
       "category": "fresh_produce",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/500508.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Red_Apple_with_cross_section.jpg/320px-Red_Apple_with_cross_section.jpg",
       "prices": {
         "fairprice": {
           "price": 6.95,
@@ -207,7 +207,7 @@
         "shengsiong": {
           "price": 6.5,
           "url": "https://shengsiong.com.sg/product/envy-apples-5s",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     },
@@ -215,7 +215,7 @@
       "id": "fresh-broccoli-1pc",
       "name": "Fresh Broccoli 1pc",
       "category": "fresh_produce",
-      "image": "https://images.deliveryhero.io/image/fd-sg/Products/500732.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Broccoli_and_cross_section_edit.jpg/320px-Broccoli_and_cross_section_edit.jpg",
       "prices": {
         "fairprice": {
           "price": 1.8,
@@ -225,7 +225,7 @@
         "shengsiong": {
           "price": 1.65,
           "url": "https://shengsiong.com.sg/product/broccoli-1pc",
-          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+          "lastUpdated": "10 Jun 2026, 01:02 PM SGT"
         }
       }
     }

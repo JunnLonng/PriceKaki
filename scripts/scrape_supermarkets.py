@@ -17,7 +17,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "meiji-fresh-milk-2l",
         "name": "Meiji Fresh Milk 2L",
         "category": "dairy_eggs",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/501309.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/888/807/061/3349/front_en.11.400.jpg",
         "keywords": ["meiji", "fresh", "milk", "2l"],
         "default_prices": {
             "fairprice": {"price": 6.15, "url": "https://www.fairprice.com.sg/product/meiji-fresh-milk-2l-102931"},
@@ -28,7 +28,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "gardenia-enriched-white-bread-400g",
         "name": "Gardenia Enriched White Bread 400g",
         "category": "bakery_bread",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/1172825.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/888/824/710/1006/front_en.16.400.jpg",
         "keywords": ["gardenia", "white", "bread", "400g"],
         "default_prices": {
             "fairprice": {"price": 2.10, "url": "https://www.fairprice.com.sg/product/gardenia-enriched-white-bread-400g-102554"},
@@ -39,7 +39,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "milo-active-go-powder-900g",
         "name": "Milo Active-Go Powder 900g",
         "category": "beverages",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/502127.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/888/647/400/1009/front_en.13.400.jpg",
         "keywords": ["milo", "900g"],
         "default_prices": {
             "fairprice": {"price": 8.95, "url": "https://www.fairprice.com.sg/product/milo-active-go-powder-900g-103328"},
@@ -50,7 +50,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "first-choice-eggs-10s",
         "name": "First Choice Premium Eggs 10s (600g)",
         "category": "dairy_eggs",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/1689849.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Eggs_in_basket.jpg/320px-Eggs_in_basket.jpg",
         "keywords": ["eggs", "10s"],
         "default_prices": {
             "fairprice": {"price": 3.40, "url": "https://www.fairprice.com.sg/product/first-choice-fresh-eggs-10s-105151"},
@@ -61,7 +61,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "pokka-green-tea-1-5l",
         "name": "Pokka Green Tea Jasmine 1.5L",
         "category": "beverages",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/1151603.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/888/819/910/2434/front_en.8.400.jpg",
         "keywords": ["pokka", "green", "tea", "1.5l"],
         "default_prices": {
             "fairprice": {"price": 2.40, "url": "https://www.fairprice.com.sg/product/pokka-jasmine-green-tea-1-5l-103138"},
@@ -72,7 +72,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "maggi-instant-noodles-curry-5s",
         "name": "Maggi 2-Min Curry Noodles 5x79g",
         "category": "cooking_essentials",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/502010.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/955/600/111/9855/front_en.6.400.jpg",
         "keywords": ["maggi", "curry", "noodles"],
         "default_prices": {
             "fairprice": {"price": 2.95, "url": "https://www.fairprice.com.sg/product/maggi-2-min-curry-noodles-5x79g-102715"},
@@ -83,7 +83,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "scs-salted-butter-250g",
         "name": "SCS Salted Butter 250g",
         "category": "dairy_eggs",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/1183344.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/931/007/500/1626/front_en.17.400.jpg",
         "keywords": ["scs", "butter", "250g"],
         "default_prices": {
             "fairprice": {"price": 6.45, "url": "https://www.fairprice.com.sg/product/scs-salted-butter-250g-102552"},
@@ -94,7 +94,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "naturel-canola-oil-2l",
         "name": "Naturel Pure Canola Oil 2L",
         "category": "cooking_essentials",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/1691129.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/888/809/015/0053/front_en.3.400.jpg",
         "keywords": ["naturel", "canola", "oil", "2l"],
         "default_prices": {
             "fairprice": {"price": 9.50, "url": "https://www.fairprice.com.sg/product/naturel-canola-oil-2l-102874"},
@@ -105,7 +105,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "sensodyne-toothpaste-100g",
         "name": "Sensodyne Multi Care Toothpaste 100g",
         "category": "household_personal",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/1175655.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/931/007/601/4502/front_en.5.400.jpg",
         "keywords": ["sensodyne", "toothpaste", "100g"],
         "default_prices": {
             "fairprice": {"price": 8.20, "url": "https://www.fairprice.com.sg/product/sensodyne-toothpaste-100g-103858"},
@@ -116,7 +116,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "dynamo-detergent-liquid-2-7kg",
         "name": "Dynamo Liquid Power Gel Detergent 2.7kg",
         "category": "household_personal",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/1151216.jpg",
+        "image": "https://images.openfoodfacts.org/images/products/490/243/090/6907/front_en.3.400.jpg",
         "keywords": ["dynamo", "gel", "detergent", "2.7kg"],
         "default_prices": {
             "fairprice": {"price": 13.50, "url": "https://www.fairprice.com.sg/product/dynamo-power-gel-detergent-2-7kg-103983"},
@@ -127,7 +127,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "envy-apples-5s",
         "name": "Envy Apples 5s Pack",
         "category": "fresh_produce",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/500508.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Red_Apple_with_cross_section.jpg/320px-Red_Apple_with_cross_section.jpg",
         "keywords": ["envy", "apples", "5s"],
         "default_prices": {
             "fairprice": {"price": 6.95, "url": "https://www.fairprice.com.sg/product/envy-apples-5s-105156"},
@@ -138,7 +138,7 @@ ESSENTIAL_PRODUCTS_SEED = [
         "id": "fresh-broccoli-1pc",
         "name": "Fresh Broccoli 1pc",
         "category": "fresh_produce",
-        "image": "https://images.deliveryhero.io/image/fd-sg/Products/500732.jpg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Broccoli_and_cross_section_edit.jpg/320px-Broccoli_and_cross_section_edit.jpg",
         "keywords": ["broccoli"],
         "default_prices": {
             "fairprice": {"price": 1.80, "url": "https://www.fairprice.com.sg/product/broccoli-1pc-105021"},
