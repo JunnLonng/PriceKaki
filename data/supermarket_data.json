@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "lastUpdated": "10 Jun 2026, 12:41 PM SGT",
+    "sources": {
+      "fairprice": {
+        "status": "failed",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "status": "success",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      }
+    }
+  },
+  "products": [
+    {
+      "id": "meiji-fresh-milk-2l",
+      "name": "Meiji Fresh Milk 2L",
+      "category": "dairy_eggs",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/501309.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 6.15,
+          "url": "https://www.fairprice.com.sg/product/meiji-fresh-milk-2l-102931",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 5.95,
+          "url": "https://shengsiong.com.sg/product/meiji-fresh-milk-2l",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "gardenia-enriched-white-bread-400g",
+      "name": "Gardenia Enriched White Bread 400g",
+      "category": "bakery_bread",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1172825.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 2.1,
+          "url": "https://www.fairprice.com.sg/product/gardenia-enriched-white-bread-400g-102554",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 2.05,
+          "url": "https://shengsiong.com.sg/product/gardenia-enriched-white-bread-400g",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "milo-active-go-powder-900g",
+      "name": "Milo Active-Go Powder 900g",
+      "category": "beverages",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/502127.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 8.95,
+          "url": "https://www.fairprice.com.sg/product/milo-active-go-powder-900g-103328",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 8.5,
+          "url": "https://shengsiong.com.sg/product/milo-active-go-powder-900g",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "first-choice-eggs-10s",
+      "name": "First Choice Premium Eggs 10s (600g)",
+      "category": "dairy_eggs",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1689849.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 3.4,
+          "url": "https://www.fairprice.com.sg/product/first-choice-fresh-eggs-10s-105151",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 3.25,
+          "url": "https://shengsiong.com.sg/product/first-choice-fresh-eggs-10s",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "pokka-green-tea-1-5l",
+      "name": "Pokka Green Tea Jasmine 1.5L",
+      "category": "beverages",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1151603.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 2.4,
+          "url": "https://www.fairprice.com.sg/product/pokka-jasmine-green-tea-1-5l-103138",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 2.25,
+          "url": "https://shengsiong.com.sg/product/pokka-jasmine-green-tea-1-5l",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "maggi-instant-noodles-curry-5s",
+      "name": "Maggi 2-Min Curry Noodles 5x79g",
+      "category": "cooking_essentials",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/502010.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 2.95,
+          "url": "https://www.fairprice.com.sg/product/maggi-2-min-curry-noodles-5x79g-102715",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 2.85,
+          "url": "https://shengsiong.com.sg/product/maggi-2-min-curry-noodles-5s",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "scs-salted-butter-250g",
+      "name": "SCS Salted Butter 250g",
+      "category": "dairy_eggs",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1183344.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 6.45,
+          "url": "https://www.fairprice.com.sg/product/scs-salted-butter-250g-102552",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 6.2,
+          "url": "https://shengsiong.com.sg/product/scs-salted-butter-250g",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "naturel-canola-oil-2l",
+      "name": "Naturel Pure Canola Oil 2L",
+      "category": "cooking_essentials",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1691129.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 9.5,
+          "url": "https://www.fairprice.com.sg/product/naturel-canola-oil-2l-102874",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 8.95,
+          "url": "https://shengsiong.com.sg/product/naturel-canola-oil-2l",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "sensodyne-toothpaste-100g",
+      "name": "Sensodyne Multi Care Toothpaste 100g",
+      "category": "household_personal",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1175655.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 8.2,
+          "url": "https://www.fairprice.com.sg/product/sensodyne-toothpaste-100g-103858",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 7.95,
+          "url": "https://shengsiong.com.sg/product/sensodyne-toothpaste-100g",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "dynamo-detergent-liquid-2-7kg",
+      "name": "Dynamo Liquid Power Gel Detergent 2.7kg",
+      "category": "household_personal",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/1151216.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 13.5,
+          "url": "https://www.fairprice.com.sg/product/dynamo-power-gel-detergent-2-7kg-103983",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 12.9,
+          "url": "https://shengsiong.com.sg/product/dynamo-power-gel-detergent-2-7kg",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "envy-apples-5s",
+      "name": "Envy Apples 5s Pack",
+      "category": "fresh_produce",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/500508.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 6.95,
+          "url": "https://www.fairprice.com.sg/product/envy-apples-5s-105156",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 6.5,
+          "url": "https://shengsiong.com.sg/product/envy-apples-5s",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    },
+    {
+      "id": "fresh-broccoli-1pc",
+      "name": "Fresh Broccoli 1pc",
+      "category": "fresh_produce",
+      "image": "https://images.deliveryhero.io/image/fd-sg/Products/500732.jpg",
+      "prices": {
+        "fairprice": {
+          "price": 1.8,
+          "url": "https://www.fairprice.com.sg/product/broccoli-1pc-105021",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        },
+        "shengsiong": {
+          "price": 1.65,
+          "url": "https://shengsiong.com.sg/product/broccoli-1pc",
+          "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+        }
+      }
+    }
+  ]
+}

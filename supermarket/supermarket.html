@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('pricekaki_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <title>Supermarket Price Kaki — Singapore Grocery Price Comparator</title>
+  <meta name="description" content="Compare daily grocery prices for milk, bread, rice, and eggs across NTUC FairPrice and Sheng Siong in Singapore. Save on your grocery basket.">
+  <link rel="stylesheet" href="../styles/main.css?v=1.4">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Supermarket-specific custom styles */
+    .supermarket-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .supermarket-grid {
+        grid-template-columns: 320px minmax(0, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-input-wrapper i {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+    }
+
+    .search-input-wrapper input {
+      padding-left: 2.25rem !important;
+    }
+
+    .category-pills {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .category-pill-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--surface-border);
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.8rem;
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+    }
+
+    .category-pill-btn:hover {
+      color: var(--text);
+      background: var(--surface-hover);
+      border-color: var(--primary);
+    }
+
+    .category-pill-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .category-pill-btn .count-badge {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.1rem 0.4rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .product-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 0.8rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .product-image-container {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .product-image-container img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .product-category-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      height: 2.6rem;
+    }
+
+    .price-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .price-compare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.4rem 0.5rem;
+      border-radius: 0.35rem;
+      border: 1px solid transparent;
+      margin-bottom: 0.25rem;
+    }
+
+    .price-compare-row.cheapest-store {
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .price-compare-row .store-name {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .price-compare-row.cheapest-store .store-name {
+      color: var(--accent);
+    }
+
+    .price-compare-row .store-val {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .basket-add-btn {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--surface-border);
+      color: var(--text);
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+      font-family: var(--font);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      transition: var(--transition);
+    }
+
+    .basket-add-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .basket-add-btn.added {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    /* Basket Summary Bar */
+    .basket-panel {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--surface) 0%, rgba(19, 27, 46, 0.8) 100%);
+      border: 1px solid var(--surface-border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .basket-item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+
+    .basket-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.5rem;
+      background: var(--bg);
+      border: 1px solid var(--surface-border);
+      border-radius: 0.35rem;
+    }
+
+    .basket-item .remove-btn {
+      background: transparent;
+      border: none;
+      color: var(--danger);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.2rem;
+    }
+
+    .basket-totals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      border-top: 1px dashed var(--surface-border);
+      padding-top: 1rem;
+    }
+
+    .basket-total-card {
+      background: var(--bg);
+      border: 1px solid var(--surface-border);
+      padding: 0.8rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .basket-total-card.winner {
+      border: 2px solid var(--accent);
+      background: var(--accent-light);
+    }
+
+    .basket-total-card .store-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .basket-total-card.winner .store-title {
+      color: var(--accent);
+    }
+
+    .basket-total-card .store-sum {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .basket-total-card.winner .store-sum {
+      color: var(--accent);
+    }
+
+    /* Warning Callout */
+    .source-warning-banner {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid var(--danger);
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .source-warning-banner i {
+      color: var(--danger);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo-section">
+        <h1><i data-lucide="shopping-bag"></i> Supermarket Kaki</h1>
+        <p>Singapore Supermarket Price Comparator</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="../index.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="home" style="width: 16px; height: 16px;"></i> Hub</a>
+        <a href="../petrol/petrol.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="fuel" style="width: 16px; height: 16px;"></i> Petrol Prices</a>
+        <a href="../carpark/carpark.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="parking-circle" style="width: 16px; height: 16px;"></i> Carparks</a>
+        <a href="../ev/ev.html" class="nav-link" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;"><i data-lucide="zap" style="width: 16px; height: 16px;"></i> EV Charging</a>
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+          <i data-lucide="sun" id="sunIcon"></i>
+          <i data-lucide="moon" id="moonIcon" style="display: none;"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Source warning banner (for scraper fault tolerance feedback) -->
+    <div class="source-warning-banner" id="warningBanner" style="display: none;">
+      <i data-lucide="alert-triangle"></i>
+      <div>
+        <strong>Connection Warning:</strong> Some supermarket prices couldn't be updated live and are showing cached rates. (Failed sources: <span id="failedSources">None</span>)
+      </div>
+    </div>
+
+    <!-- Main Supermarket Grid -->
+    <div class="supermarket-grid">
+      
+      <!-- Left Sidebar: Filters & Basket -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <!-- Search & Filter Settings Panel -->
+        <div class="panel">
+          <h2 class="panel-title" style="margin-bottom: 1.25rem;"><i data-lucide="sliders-horizontal"></i> Filters & Search</h2>
+          
+          <!-- Product Search Input -->
+          <div class="form-group">
+            <label for="productSearch">Search Groceries</label>
+            <div class="search-input-wrapper">
+              <i data-lucide="search"></i>
+              <input type="text" id="productSearch" class="select-control" placeholder="Search milk, bread, rice...">
+            </div>
+          </div>
+
+          <!-- Sorting Selector -->
+          <div class="form-group">
+            <label for="sortSelect">Sort Results</label>
+            <select id="sortSelect" class="select-control">
+              <option value="name_asc" selected>Alphabetical (A-Z)</option>
+              <option value="name_desc">Alphabetical (Z-A)</option>
+              <option value="price_diff_desc">Biggest Price Difference First</option>
+            </select>
+          </div>
+
+          <!-- Categories List -->
+          <div class="form-group" style="margin-bottom: 0;">
+            <label>Categories</label>
+            <div class="category-pills" id="categoryPills">
+              <button class="category-pill-btn active" data-category="all">
+                <span>All Categories</span>
+                <span class="count-badge" id="count-all">0</span>
+              </button>
+              <button class="category-pill-btn" data-category="dairy_eggs">
+                <span>Dairy & Eggs</span>
+                <span class="count-badge" id="count-dairy_eggs">0</span>
+              </button>
+              <button class="category-pill-btn" data-category="bakery_bread">
+                <span>Bakery & Bread</span>
+                <span class="count-badge" id="count-bakery_bread">0</span>
+              </button>
+              <button class="category-pill-btn" data-category="cooking_essentials">
+                <span>Cooking Essentials</span>
+                <span class="count-badge" id="count-cooking_essentials">0</span>
+              </button>
+              <button class="category-pill-btn" data-category="fresh_produce">
+                <span>Fresh Produce</span>
+                <span class="count-badge" id="count-fresh_produce">0</span>
+              </button>
+              <button class="category-pill-btn" data-category="beverages">
+                <span>Beverages</span>
+                <span class="count-badge" id="count-beverages">0</span>
+              </button>
+              <button class="category-pill-btn" data-category="household_personal">
+                <span>Household & Personal</span>
+                <span class="count-badge" id="count-household_personal">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Basket Calculator Panel -->
+        <div class="basket-panel" id="basketPanel" style="display: none;">
+          <h2 class="panel-title" style="margin-bottom: 1rem;"><i data-lucide="shopping-cart"></i> Basket Kaki Calculator</h2>
+          
+          <div class="basket-item-list" id="basketItemList">
+            <!-- Basket items populated dynamically -->
+          </div>
+
+          <div class="basket-totals">
+            <!-- FairPrice Basket Total -->
+            <div class="basket-total-card" id="totalCardFairPrice">
+              <span class="store-title">FairPrice</span>
+              <span class="store-sum" id="totalFairPrice">S$ 0.00</span>
+            </div>
+
+            <!-- Sheng Siong Basket Total -->
+            <div class="basket-total-card" id="totalCardShengSiong">
+              <span class="store-title">Sheng Siong</span>
+              <span class="store-sum" id="totalShengSiong">S$ 0.00</span>
+            </div>
+          </div>
+
+          <div id="basketSummaryWinner" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--accent); display: none;">
+            Sheng Siong is S$ 0.00 cheaper for this basket!
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Product Comparisons Display -->
+      <div class="panel">
+        <div class="dashboard-header-bar" style="margin-bottom: 1.5rem;">
+          <h2 class="panel-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0; display: inline-flex;"><i data-lucide="layout-grid"></i> Compare Product Prices</h2>
+          <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 500;">Last Updated: <span id="lastUpdatedDate">-</span></span>
+        </div>
+
+        <!-- Dynamic Product Cards Grid -->
+        <div class="product-grid" id="productGrid">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 PriceKaki. Built for smart Singaporean shoppers.</p>
+      <p style="font-size: 0.75rem; margin-top: 0.25rem; opacity: 0.8;">Prices fetched auto-daily from NTUC FairPrice and Sheng Siong Online. Verify actual board prices before purchasing.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript logic script -->
+  <script src="app.js"></script>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>

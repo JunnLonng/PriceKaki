@@ -43,7 +43,7 @@ async function init() {
 
   // 1. Load live prices from scraped data file (if available)
   try {
-    const response = await fetch('data/petrol_data.json');
+    const response = await fetch('../data/petrol_data.json');
     if (response.ok) {
       const livePricesObj = await response.json();
       
@@ -63,11 +63,11 @@ async function init() {
             }
           }
         }
-        console.log("Loaded live prices from petrol_data.json");
+        console.log("Loaded live prices from ../data/petrol_data.json");
       }
     }
   } catch (err) {
-    console.warn("Could not fetch data/petrol_data.json, using default base prices instead.", err);
+    console.warn("Could not fetch ../data/petrol_data.json, using default base prices instead.", err);
   }
 
   // 2. Load Custom Board Prices from LocalStorage if present

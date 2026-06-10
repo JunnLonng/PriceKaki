@@ -94,6 +94,13 @@
       border-color: #6366f1 !important;
       box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
     }
+    .portal-card.supermarket-card::before {
+      background: #f59e0b;
+    }
+    .portal-card.supermarket-card:hover {
+      border-color: #f59e0b !important;
+      box-shadow: 0 20px 40px -15px rgba(245, 158, 11, 0.25);
+    }
     .card-icon-wrapper {
       width: 56px;
       height: 56px;
@@ -171,7 +178,7 @@
     <!-- Portal Grid -->
     <div class="portal-grid">
       <!-- Petrol Card -->
-      <div class="portal-card" onclick="window.location.href='petrol.html'">
+      <div class="portal-card" onclick="window.location.href='petrol/petrol.html'">
         <div class="card-icon-wrapper" style="background: rgba(59, 130, 246, 0.1); color: var(--primary);">
           <i data-lucide="fuel" style="width: 28px; height: 28px;"></i>
         </div>
@@ -179,13 +186,13 @@
         <div class="card-desc">
           Compare daily pump prices for RON 92, 95, 98, Premium, and Diesel grades. Calculate and stack credit card rebates, loyalty programs, and find the cheapest refueling station.
         </div>
-        <a href="petrol.html" class="card-btn" style="background: var(--primary);">
+        <a href="petrol/petrol.html" class="card-btn" style="background: var(--primary);">
           Open Petrol Kaki <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
         </a>
       </div>
 
       <!-- EV Card -->
-      <div class="portal-card ev-card" onclick="window.location.href='ev.html'">
+      <div class="portal-card ev-card" onclick="window.location.href='ev/ev.html'">
         <div class="card-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: var(--accent);">
           <i data-lucide="zap" style="width: 28px; height: 28px;"></i>
         </div>
@@ -193,13 +200,13 @@
         <div class="card-desc">
           Compare AC and DC charger prices across SP Group, Shell Recharge, Charge+, and others. Calculate charging times, battery added ranges (km), and card rebates.
         </div>
-        <a href="ev.html" class="card-btn" style="background: var(--accent);">
+        <a href="ev/ev.html" class="card-btn" style="background: var(--accent);">
           Open EV Kaki <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
         </a>
       </div>
 
       <!-- Carpark Card -->
-      <div class="portal-card carpark-card" onclick="window.location.href='carpark.html'">
+      <div class="portal-card carpark-card" onclick="window.location.href='carpark/carpark.html'">
         <div class="card-icon-wrapper" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;">
           <i data-lucide="parking-circle" style="width: 28px; height: 28px;"></i>
         </div>
@@ -207,8 +214,22 @@
         <div class="card-desc">
           Compare parking fees at 1,140+ malls, plazas, and office buildings. Search and geocode locations with OneMap, and check real-time available lots dynamically.
         </div>
-        <a href="carpark.html" class="card-btn" style="background: #6366f1;">
+        <a href="carpark/carpark.html" class="card-btn" style="background: #6366f1;">
           Open Carpark Kaki <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </a>
+      </div>
+
+      <!-- Supermarket Card -->
+      <div class="portal-card supermarket-card" onclick="window.location.href='supermarket/supermarket.html'">
+        <div class="card-icon-wrapper" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+          <i data-lucide="shopping-bag" style="width: 28px; height: 28px;"></i>
+        </div>
+        <div class="card-title">Supermarket Prices</div>
+        <div class="card-desc">
+          Compare daily grocery prices for fresh milk, eggs, bread, rice, and other essential items. Compare NTUC FairPrice and Sheng Siong to find the cheapest option for your basket.
+        </div>
+        <a href="supermarket/supermarket.html" class="card-btn" style="background: #f59e0b;">
+          Open Supermarket Kaki <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
         </a>
       </div>
     </div>
