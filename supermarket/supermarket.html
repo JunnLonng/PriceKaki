@@ -96,7 +96,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.25rem;
     }
 
@@ -205,7 +205,15 @@
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
-      flex-shrink: 0;
+      overflow: hidden;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .price-compare-row .store-name span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .price-compare-row.cheapest-store .store-name {
@@ -366,7 +374,7 @@
   </div>
 
   <!-- JavaScript logic script -->
-  <script src="app.js"></script>
+  <script src="app.js?v=2.0"></script>
 
   <script>
     // Initialize Lucide Icons

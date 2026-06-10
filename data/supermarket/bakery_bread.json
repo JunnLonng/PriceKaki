@@ -1,0 +1,74 @@
+[
+  {
+    "id": "gardenia-enriched-white-bread-400g",
+    "name": "Gardenia Enriched White Bread 400g",
+    "category": "bakery_bread",
+    "image": "https://images.openfoodfacts.org/images/products/888/824/710/1006/front_en.16.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 2.1,
+        "url": "https://www.fairprice.com.sg/product/gardenia-enriched-white-bread-400g-102554",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.05,
+        "url": "https://shengsiong.com.sg/product/gardenia-enriched-white-bread-400g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "sunshine-soft-white-bread-400g",
+    "name": "Sunshine Enriched Soft White Bread 400g",
+    "category": "bakery_bread",
+    "image": "https://images.openfoodfacts.org/images/products/888/802/010/2008/front_en.7.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 2.05,
+        "url": "https://www.fairprice.com.sg/product/sunshine-enriched-soft-white-bread-400g-102555",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 1.95,
+        "url": "https://shengsiong.com.sg/product/sunshine-soft-white-bread-400g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "gardenia-wholemeal-bread-400g",
+    "name": "Gardenia Fine Grain Wholemeal Bread 400g",
+    "category": "bakery_bread",
+    "image": "https://images.openfoodfacts.org/images/products/888/824/710/1020/front_en.13.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 2.95,
+        "url": "https://www.fairprice.com.sg/product/gardenia-fine-grain-wholemeal-bread-400g-102556",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.85,
+        "url": "https://shengsiong.com.sg/product/gardenia-fine-grain-wholemeal-bread-400g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "sunshine-raisin-bread-400g",
+    "name": "Sunshine California Raisin Bread 400g",
+    "category": "bakery_bread",
+    "image": "https://images.openfoodfacts.org/images/products/888/802/010/2404/front_en.3.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 3.3,
+        "url": "https://www.fairprice.com.sg/product/sunshine-california-raisin-bread-400g-102557",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 3.15,
+        "url": "https://shengsiong.com.sg/product/sunshine-raisin-bread-400g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  }
+]

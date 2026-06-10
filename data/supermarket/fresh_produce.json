@@ -1,0 +1,92 @@
+[
+  {
+    "id": "envy-apples-5s",
+    "name": "Envy Apples 5s Pack",
+    "category": "fresh_produce",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Red_Apple_with_cross_section.jpg/320px-Red_Apple_with_cross_section.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 6.95,
+        "url": "https://www.fairprice.com.sg/product/envy-apples-5s-105156",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 6.5,
+        "url": "https://shengsiong.com.sg/product/envy-apples-5s",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "fresh-broccoli-1pc",
+    "name": "Fresh Broccoli 1pc",
+    "category": "fresh_produce",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Broccoli_and_cross_section_edit.jpg/320px-Broccoli_and_cross_section_edit.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 1.8,
+        "url": "https://www.fairprice.com.sg/product/broccoli-1pc-105021",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 1.65,
+        "url": "https://shengsiong.com.sg/product/broccoli-1pc",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "pasar-strawberries-250g",
+    "name": "Pasar Fresh Strawberries 250g",
+    "category": "fresh_produce",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/PerfectStrawberry.jpg/320px-PerfectStrawberry.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 4.95,
+        "url": "https://www.fairprice.com.sg/product/fresh-strawberries-250g-105022",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 4.5,
+        "url": "https://shengsiong.com.sg/product/fresh-strawberries-250g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "zespri-green-kiwifruit-4s",
+    "name": "Zespri Green Kiwifruit 4s",
+    "category": "fresh_produce",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kiwi_fruit_vs_cross_section.jpg/320px-Kiwi_fruit_vs_cross_section.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 3.95,
+        "url": "https://www.fairprice.com.sg/product/zespri-green-kiwifruit-4s-105023",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 3.6,
+        "url": "https://shengsiong.com.sg/product/zespri-green-kiwifruit-4s",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "fresh-blueberries-125g",
+    "name": "Pasar Fresh Blueberries 125g",
+    "category": "fresh_produce",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Blueberries_in_a_bowl_2.jpg/320px-Blueberries_in_a_bowl_2.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 3.25,
+        "url": "https://www.fairprice.com.sg/product/fresh-blueberries-125g-105024",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.95,
+        "url": "https://shengsiong.com.sg/product/fresh-blueberries-125g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  }
+]

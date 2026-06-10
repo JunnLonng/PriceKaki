@@ -144,6 +144,193 @@ ESSENTIAL_PRODUCTS_SEED = [
             "fairprice": {"price": 1.80, "url": "https://www.fairprice.com.sg/product/broccoli-1pc-105021"},
             "shengsiong": {"price": 1.65, "url": "https://shengsiong.com.sg/product/broccoli-1pc"}
         }
+    },
+    {
+        "id": "yakult-ace-light-5s",
+        "name": "Yakult Ace Light Cultured Milk Drink 5x80ml",
+        "category": "dairy_eggs",
+        "image": "https://images.openfoodfacts.org/images/products/490/307/600/6105/front_en.11.400.jpg",
+        "keywords": ["yakult", "ace", "light"],
+        "default_prices": {
+            "fairprice": {"price": 3.70, "url": "https://www.fairprice.com.sg/product/yakult-ace-light-5-x-80ml-122421"},
+            "shengsiong": {"price": 3.55, "url": "https://shengsiong.com.sg/product/yakult-ace-light-5x80ml"}
+        }
+    },
+    {
+        "id": "kraft-singles-cheese-250g",
+        "name": "Kraft Singles Processed Cheese Slices 250g",
+        "category": "dairy_eggs",
+        "image": "https://images.openfoodfacts.org/images/products/930/065/000/9611/front_en.18.400.jpg",
+        "keywords": ["kraft", "singles", "cheese"],
+        "default_prices": {
+            "fairprice": {"price": 5.95, "url": "https://www.fairprice.com.sg/product/kraft-singles-processed-cheese-slices-12s-250g-112351"},
+            "shengsiong": {"price": 5.65, "url": "https://shengsiong.com.sg/product/kraft-singles-cheese-slices-250g"}
+        }
+    },
+    {
+        "id": "sunshine-soft-white-bread-400g",
+        "name": "Sunshine Enriched Soft White Bread 400g",
+        "category": "bakery_bread",
+        "image": "https://images.openfoodfacts.org/images/products/888/802/010/2008/front_en.7.400.jpg",
+        "keywords": ["sunshine", "bread", "white"],
+        "default_prices": {
+            "fairprice": {"price": 2.05, "url": "https://www.fairprice.com.sg/product/sunshine-enriched-soft-white-bread-400g-102555"},
+            "shengsiong": {"price": 1.95, "url": "https://shengsiong.com.sg/product/sunshine-soft-white-bread-400g"}
+        }
+    },
+    {
+        "id": "gardenia-wholemeal-bread-400g",
+        "name": "Gardenia Fine Grain Wholemeal Bread 400g",
+        "category": "bakery_bread",
+        "image": "https://images.openfoodfacts.org/images/products/888/824/710/1020/front_en.13.400.jpg",
+        "keywords": ["gardenia", "wholemeal", "bread"],
+        "default_prices": {
+            "fairprice": {"price": 2.95, "url": "https://www.fairprice.com.sg/product/gardenia-fine-grain-wholemeal-bread-400g-102556"},
+            "shengsiong": {"price": 2.85, "url": "https://shengsiong.com.sg/product/gardenia-fine-grain-wholemeal-bread-400g"}
+        }
+    },
+    {
+        "id": "sunshine-raisin-bread-400g",
+        "name": "Sunshine California Raisin Bread 400g",
+        "category": "bakery_bread",
+        "image": "https://images.openfoodfacts.org/images/products/888/802/010/2404/front_en.3.400.jpg",
+        "keywords": ["sunshine", "raisin", "bread"],
+        "default_prices": {
+            "fairprice": {"price": 3.30, "url": "https://www.fairprice.com.sg/product/sunshine-california-raisin-bread-400g-102557"},
+            "shengsiong": {"price": 3.15, "url": "https://shengsiong.com.sg/product/sunshine-raisin-bread-400g"}
+        }
+    },
+    {
+        "id": "knife-groundnut-oil-2l",
+        "name": "Knife Brand Groundnut Cooking Oil 2L",
+        "category": "cooking_essentials",
+        "image": "https://images.openfoodfacts.org/images/products/888/804/511/8022/front_en.3.400.jpg",
+        "keywords": ["knife", "cooking", "oil"],
+        "default_prices": {
+            "fairprice": {"price": 9.20, "url": "https://www.fairprice.com.sg/product/knife-brand-cooking-oil-2l-102875"},
+            "shengsiong": {"price": 8.65, "url": "https://shengsiong.com.sg/product/knife-cooking-oil-2l"}
+        }
+    },
+    {
+        "id": "royal-umbrella-rice-5kg",
+        "name": "Royal Umbrella Thai Hom Mali Fragrant Rice 5kg",
+        "category": "cooking_essentials",
+        "image": "https://images.openfoodfacts.org/images/products/885/012/600/5129/front_en.4.400.jpg",
+        "keywords": ["royal", "umbrella", "rice", "fragrant"],
+        "default_prices": {
+            "fairprice": {"price": 16.80, "url": "https://www.fairprice.com.sg/product/royal-umbrella-thai-hom-mali-rice-5kg-102983"},
+            "shengsiong": {"price": 16.20, "url": "https://shengsiong.com.sg/product/royal-umbrella-rice-5kg"}
+        }
+    },
+    {
+        "id": "san-remo-spaghetti-500g",
+        "name": "San Remo Spaghetti Pasta 500g",
+        "category": "cooking_essentials",
+        "image": "https://images.openfoodfacts.org/images/products/931/011/300/6200/front_en.15.400.jpg",
+        "keywords": ["san", "remo", "spaghetti", "pasta"],
+        "default_prices": {
+            "fairprice": {"price": 2.45, "url": "https://www.fairprice.com.sg/product/san-remo-spaghetti-500g-102716"},
+            "shengsiong": {"price": 2.35, "url": "https://shengsiong.com.sg/product/san-remo-spaghetti-500g"}
+        }
+    },
+    {
+        "id": "pasar-strawberries-250g",
+        "name": "Pasar Fresh Strawberries 250g",
+        "category": "fresh_produce",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/PerfectStrawberry.jpg/320px-PerfectStrawberry.jpg",
+        "keywords": ["strawberries", "fresh", "produce"],
+        "default_prices": {
+            "fairprice": {"price": 4.95, "url": "https://www.fairprice.com.sg/product/fresh-strawberries-250g-105022"},
+            "shengsiong": {"price": 4.50, "url": "https://shengsiong.com.sg/product/fresh-strawberries-250g"}
+        }
+    },
+    {
+        "id": "zespri-green-kiwifruit-4s",
+        "name": "Zespri Green Kiwifruit 4s",
+        "category": "fresh_produce",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kiwi_fruit_vs_cross_section.jpg/320px-Kiwi_fruit_vs_cross_section.jpg",
+        "keywords": ["kiwifruit", "zespri", "green"],
+        "default_prices": {
+            "fairprice": {"price": 3.95, "url": "https://www.fairprice.com.sg/product/zespri-green-kiwifruit-4s-105023"},
+            "shengsiong": {"price": 3.60, "url": "https://shengsiong.com.sg/product/zespri-green-kiwifruit-4s"}
+        }
+    },
+    {
+        "id": "fresh-blueberries-125g",
+        "name": "Pasar Fresh Blueberries 125g",
+        "category": "fresh_produce",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Blueberries_in_a_bowl_2.jpg/320px-Blueberries_in_a_bowl_2.jpg",
+        "keywords": ["blueberries", "fresh", "produce"],
+        "default_prices": {
+            "fairprice": {"price": 3.25, "url": "https://www.fairprice.com.sg/product/fresh-blueberries-125g-105024"},
+            "shengsiong": {"price": 2.95, "url": "https://shengsiong.com.sg/product/fresh-blueberries-125g"}
+        }
+    },
+    {
+        "id": "coca-cola-less-sugar-1-5l",
+        "name": "Coca-Cola Less Sugar Drink 1.5L",
+        "category": "beverages",
+        "image": "https://images.openfoodfacts.org/images/products/888/800/212/0327/front_en.11.400.jpg",
+        "keywords": ["coca", "cola", "coke", "sugar"],
+        "default_prices": {
+            "fairprice": {"price": 2.50, "url": "https://www.fairprice.com.sg/product/coca-cola-original-taste-less-sugar-1-5l-103139"},
+            "shengsiong": {"price": 2.35, "url": "https://shengsiong.com.sg/product/coca-cola-less-sugar-1-5l"}
+        }
+    },
+    {
+        "id": "nescafe-3in1-coffee-30s",
+        "name": "Nescafe 3-in-1 Instant Coffee Blend & Brew 30x19g",
+        "category": "beverages",
+        "image": "https://images.openfoodfacts.org/images/products/888/600/350/0034/front_en.4.400.jpg",
+        "keywords": ["nescafe", "coffee", "coffe"],
+        "default_prices": {
+            "fairprice": {"price": 6.95, "url": "https://www.fairprice.com.sg/product/nescafe-blend-brew-3-in-1-coffe-30s-103329"},
+            "shengsiong": {"price": 6.45, "url": "https://shengsiong.com.sg/product/nescafe-3in1-coffee-30s"}
+        }
+    },
+    {
+        "id": "yeos-chrysanthemum-tea-6s",
+        "name": "Yeo's Chrysanthemum Tea Drink 6x250ml",
+        "category": "beverages",
+        "image": "https://images.openfoodfacts.org/images/products/888/803/611/1001/front_en.8.400.jpg",
+        "keywords": ["yeos", "chrysanthemum", "tea"],
+        "default_prices": {
+            "fairprice": {"price": 3.20, "url": "https://www.fairprice.com.sg/product/yeo-s-chrysanthemum-tea-6s-103140"},
+            "shengsiong": {"price": 2.95, "url": "https://shengsiong.com.sg/product/yeos-chrysanthemum-tea-6s"}
+        }
+    },
+    {
+        "id": "colgate-triple-action-2s",
+        "name": "Colgate Triple Action Toothpaste Pack 2x110g",
+        "category": "household_personal",
+        "image": "https://images.openfoodfacts.org/images/products/690/259/536/0547/front_en.5.400.jpg",
+        "keywords": ["colgate", "toothpaste", "triple"],
+        "default_prices": {
+            "fairprice": {"price": 4.35, "url": "https://www.fairprice.com.sg/product/colgate-triple-action-toothpaste-2x110g-103859"},
+            "shengsiong": {"price": 3.95, "url": "https://colgate-triple-action-2s"}
+        }
+    },
+    {
+        "id": "kleenex-toilet-tissue-10r",
+        "name": "Kleenex Ultra Soft Toilet Tissue 10 Rolls",
+        "category": "household_personal",
+        "image": "https://images.openfoodfacts.org/images/products/931/004/816/0992/front_en.4.400.jpg",
+        "keywords": ["kleenex", "toilet", "tissue", "paper"],
+        "default_prices": {
+            "fairprice": {"price": 7.95, "url": "https://www.fairprice.com.sg/product/kleenex-ultra-soft-toilet-tissue-10s-103984"},
+            "shengsiong": {"price": 7.45, "url": "https://shengsiong.com.sg/product/kleenex-toilet-tissue-10r"}
+        }
+    },
+    {
+        "id": "dettol-antiseptic-1l",
+        "name": "Dettol Antiseptic Germicide Liquid 1L",
+        "category": "household_personal",
+        "image": "https://images.openfoodfacts.org/images/products/930/061/134/4911/front_en.6.400.jpg",
+        "keywords": ["dettol", "antiseptic", "liquid"],
+        "default_prices": {
+            "fairprice": {"price": 12.95, "url": "https://www.fairprice.com.sg/product/dettol-antiseptic-liquid-1l-103985"},
+            "shengsiong": {"price": 12.20, "url": "https://shengsiong.com.sg/product/dettol-antiseptic-1l"}
+        }
     }
 ]
 
@@ -332,6 +519,23 @@ def main():
     fairprice_update_time = timestamp_str if fairprice_status == "success" else (cached_sources.get("fairprice", {}).get("lastUpdated") or timestamp_str)
     shengsiong_update_time = timestamp_str if shengsiong_status == "success" else (cached_sources.get("shengsiong", {}).get("lastUpdated") or timestamp_str)
     
+    # Group products by category and save separately
+    categories_data = {}
+    for p in final_products:
+        cat = p["category"]
+        if cat not in categories_data:
+            categories_data[cat] = []
+        categories_data[cat].append(p)
+        
+    os.makedirs("data/supermarket", exist_ok=True)
+    category_counts = {}
+    for cat, items in categories_data.items():
+        cat_file = f"data/supermarket/{cat}.json"
+        with open(cat_file, "w", encoding="utf-8") as f:
+            json.dump(items, f, indent=2)
+        category_counts[cat] = len(items)
+        print(f"Category '{cat}' data written to {cat_file} ({len(items)} items).")
+        
     # If a source failed, we keep its status in the metadata so the UI can warn the user.
     output_db = {
       "metadata": {
@@ -345,9 +549,9 @@ def main():
             "status": shengsiong_status,
             "lastUpdated": shengsiong_update_time
           }
-        }
-      },
-      "products": final_products
+        },
+        "categoryCounts": category_counts
+      }
     }
     
     # Save output

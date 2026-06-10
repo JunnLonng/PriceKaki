@@ -1,0 +1,92 @@
+[
+  {
+    "id": "milo-active-go-powder-900g",
+    "name": "Milo Active-Go Powder 900g",
+    "category": "beverages",
+    "image": "https://images.openfoodfacts.org/images/products/888/647/400/1009/front_en.13.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 8.95,
+        "url": "https://www.fairprice.com.sg/product/milo-active-go-powder-900g-103328",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 8.5,
+        "url": "https://shengsiong.com.sg/product/milo-active-go-powder-900g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "pokka-green-tea-1-5l",
+    "name": "Pokka Green Tea Jasmine 1.5L",
+    "category": "beverages",
+    "image": "https://images.openfoodfacts.org/images/products/888/819/910/2434/front_en.8.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 2.4,
+        "url": "https://www.fairprice.com.sg/product/pokka-jasmine-green-tea-1-5l-103138",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.25,
+        "url": "https://shengsiong.com.sg/product/pokka-jasmine-green-tea-1-5l",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "coca-cola-less-sugar-1-5l",
+    "name": "Coca-Cola Less Sugar Drink 1.5L",
+    "category": "beverages",
+    "image": "https://images.openfoodfacts.org/images/products/888/800/212/0327/front_en.11.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 2.5,
+        "url": "https://www.fairprice.com.sg/product/coca-cola-original-taste-less-sugar-1-5l-103139",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.35,
+        "url": "https://shengsiong.com.sg/product/coca-cola-less-sugar-1-5l",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "nescafe-3in1-coffee-30s",
+    "name": "Nescafe 3-in-1 Instant Coffee Blend & Brew 30x19g",
+    "category": "beverages",
+    "image": "https://images.openfoodfacts.org/images/products/888/600/350/0034/front_en.4.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 6.95,
+        "url": "https://www.fairprice.com.sg/product/nescafe-blend-brew-3-in-1-coffe-30s-103329",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 6.45,
+        "url": "https://shengsiong.com.sg/product/nescafe-3in1-coffee-30s",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "yeos-chrysanthemum-tea-6s",
+    "name": "Yeo's Chrysanthemum Tea Drink 6x250ml",
+    "category": "beverages",
+    "image": "https://images.openfoodfacts.org/images/products/888/803/611/1001/front_en.8.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 3.2,
+        "url": "https://www.fairprice.com.sg/product/yeo-s-chrysanthemum-tea-6s-103140",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.95,
+        "url": "https://shengsiong.com.sg/product/yeos-chrysanthemum-tea-6s",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  }
+]

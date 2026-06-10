@@ -1,0 +1,92 @@
+[
+  {
+    "id": "maggi-instant-noodles-curry-5s",
+    "name": "Maggi 2-Min Curry Noodles 5x79g",
+    "category": "cooking_essentials",
+    "image": "https://images.openfoodfacts.org/images/products/955/600/111/9855/front_en.6.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 2.95,
+        "url": "https://www.fairprice.com.sg/product/maggi-2-min-curry-noodles-5x79g-102715",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.85,
+        "url": "https://shengsiong.com.sg/product/maggi-2-min-curry-noodles-5s",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "naturel-canola-oil-2l",
+    "name": "Naturel Pure Canola Oil 2L",
+    "category": "cooking_essentials",
+    "image": "https://images.openfoodfacts.org/images/products/888/809/015/0053/front_en.3.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 9.5,
+        "url": "https://www.fairprice.com.sg/product/naturel-canola-oil-2l-102874",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 8.95,
+        "url": "https://shengsiong.com.sg/product/naturel-canola-oil-2l",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "knife-groundnut-oil-2l",
+    "name": "Knife Brand Groundnut Cooking Oil 2L",
+    "category": "cooking_essentials",
+    "image": "https://images.openfoodfacts.org/images/products/888/804/511/8022/front_en.3.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 9.2,
+        "url": "https://www.fairprice.com.sg/product/knife-brand-cooking-oil-2l-102875",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 8.65,
+        "url": "https://shengsiong.com.sg/product/knife-cooking-oil-2l",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "royal-umbrella-rice-5kg",
+    "name": "Royal Umbrella Thai Hom Mali Fragrant Rice 5kg",
+    "category": "cooking_essentials",
+    "image": "https://images.openfoodfacts.org/images/products/885/012/600/5129/front_en.4.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 16.8,
+        "url": "https://www.fairprice.com.sg/product/royal-umbrella-thai-hom-mali-rice-5kg-102983",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 16.2,
+        "url": "https://shengsiong.com.sg/product/royal-umbrella-rice-5kg",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  },
+  {
+    "id": "san-remo-spaghetti-500g",
+    "name": "San Remo Spaghetti Pasta 500g",
+    "category": "cooking_essentials",
+    "image": "https://images.openfoodfacts.org/images/products/931/011/300/6200/front_en.15.400.jpg",
+    "prices": {
+      "fairprice": {
+        "price": 2.45,
+        "url": "https://www.fairprice.com.sg/product/san-remo-spaghetti-500g-102716",
+        "lastUpdated": "10 Jun 2026, 12:41 PM SGT"
+      },
+      "shengsiong": {
+        "price": 2.35,
+        "url": "https://shengsiong.com.sg/product/san-remo-spaghetti-500g",
+        "lastUpdated": "10 Jun 2026, 01:10 PM SGT"
+      }
+    }
+  }
+]

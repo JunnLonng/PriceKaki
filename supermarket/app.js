@@ -4,6 +4,7 @@
 const state = {
   products: [],
   metadata: {},
+  categoryCache: {}, // In-memory cache for loaded categories
   filters: {
     search: '',
     category: 'all',
@@ -29,20 +30,21 @@ async function init() {
   initTheme();
   setupThemeListener();
   
-  // Load Supermarket Data
+  // Load Supermarket Data Metadata
   try {
     const response = await fetch('../data/supermarket_data.json');
     if (response.ok) {
       const db = await response.json();
-      state.products = db.products || [];
       state.metadata = db.metadata || {};
       
       // Update UI components
       updateMetadataUI();
       updateCategoryCounts();
-      renderProducts();
+      
+      // Trigger lazy load of the default category
+      await loadCategoryProducts(state.filters.category);
     } else {
-      console.error("Failed to load supermarket database", response.status);
+      console.error("Failed to load supermarket database metadata", response.status);
     }
   } catch (err) {
     console.error("Error fetching data/supermarket_data.json", err);
@@ -106,26 +108,27 @@ function updateMetadataUI() {
 
 // Update Category Item Counts on sidebar badges
 function updateCategoryCounts() {
-  const counts = {
-    all: state.products.length,
-    dairy_eggs: 0,
-    bakery_bread: 0,
-    cooking_essentials: 0,
-    fresh_produce: 0,
-    beverages: 0,
-    household_personal: 0
-  };
+  const counts = state.metadata.categoryCounts || {};
+  let total = 0;
   
-  state.products.forEach(p => {
-    if (counts[p.category] !== undefined) {
-      counts[p.category]++;
-    }
+  const categories = [
+    'dairy_eggs',
+    'bakery_bread',
+    'cooking_essentials',
+    'fresh_produce',
+    'beverages',
+    'household_personal'
+  ];
+  
+  categories.forEach(cat => {
+    const el = document.getElementById(`count-${cat}`);
+    const count = counts[cat] || 0;
+    if (el) el.textContent = count;
+    total += count;
   });
   
-  for (const cat in counts) {
-    const el = document.getElementById(`count-${cat}`);
-    if (el) el.textContent = counts[cat];
-  }
+  const allEl = document.getElementById('count-all');
+  if (allEl) allEl.textContent = total;
 }
 
 // Filter and Sort Products
@@ -156,6 +159,42 @@ function getFilteredAndSortedProducts() {
   }
   
   return result;
+}
+
+// Load category products dynamically with caching
+async function loadCategoryProducts(category) {
+  // Check in-memory cache first
+  if (state.categoryCache[category]) {
+    state.products = state.categoryCache[category];
+    renderProducts();
+    return;
+  }
+  
+  try {
+    let products = [];
+    if (category === 'all') {
+      const categories = ['dairy_eggs', 'bakery_bread', 'cooking_essentials', 'fresh_produce', 'beverages', 'household_personal'];
+      // Fetch all category files concurrently
+      const promises = categories.map(cat => 
+        fetch(`../data/supermarket/${cat}.json`)
+          .then(res => res.ok ? res.json() : [])
+      );
+      const results = await Promise.all(promises);
+      products = results.flat();
+    } else {
+      const response = await fetch(`../data/supermarket/${category}.json`);
+      if (response.ok) {
+        products = await response.json();
+      }
+    }
+    
+    // Store in cache
+    state.categoryCache[category] = products;
+    state.products = products;
+    renderProducts();
+  } catch (err) {
+    console.error(`Error loading category products for ${category}:`, err);
+  }
 }
 
 // Render Products Grid
@@ -251,12 +290,12 @@ function setupEventListeners() {
   // Category Pill toggling
   const pills = categoryPills.querySelectorAll('.category-pill-btn');
   pills.forEach(pill => {
-    pill.addEventListener('click', () => {
+    pill.addEventListener('click', async () => {
       pills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
       
       state.filters.category = pill.getAttribute('data-category');
-      renderProducts();
+      await loadCategoryProducts(state.filters.category);
     });
   });
 }
