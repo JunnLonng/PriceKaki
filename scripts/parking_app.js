@@ -503,12 +503,16 @@ function updateUI() {
 
     // Filter by proximity radius if destination is active
     if (state.destination && distance !== null) {
+      const isDest = isDestinationCarpark(cp, state.destination);
       if (state.proximityRadius === 'none') {
-        if (!isDestinationCarpark(cp, state.destination)) {
+        if (!isDest) {
           return;
         }
       } else if (state.proximityRadius !== 'all' && distance > state.proximityRadius) {
-        return;
+        // Always include the destination itself, even if coordinates are slightly further than the radius limit
+        if (!isDest) {
+          return;
+        }
       }
     }
 

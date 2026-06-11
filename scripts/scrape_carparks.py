@@ -464,13 +464,17 @@ def main():
                     })
                     success_count += 1
             # Delay to be polite
-            time.sleep(0.05)
+            time.sleep(0.2)
         except Exception as e:
             print(f"Error scraping ID {cp_id}: {e}")
             time.sleep(0.5)
 
     print(f"Scrape completed. Total successful: {success_count}/{len(carparks)}")
     
+    # Safeguard: Do not overwrite the database if rate-limiting or failures truncated the scrape list
+    if success_count < 1000:
+        raise ValueError(f"Scrape failed: Only {success_count} carparks scraped successfully (expected at least 1000).")
+
     # Save output
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     try:
