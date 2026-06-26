@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "26 Jun 2026, 03:48 PM SGT"
+    "lastUpdated": "27 Jun 2026, 01:44 AM SGT"
   },
   "prices": {
     "esso": {
@@ -16,7 +16,7 @@
       "ron92": null,
       "ron95": 3.42,
       "ron98": 3.94,
-      "premium": 4.16,
+      "premium": 3.94,
       "diesel": 4.22
     },
     "spc": {
