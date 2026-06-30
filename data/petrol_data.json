@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "30 Jun 2026, 02:07 AM SGT"
+    "lastUpdated": "30 Jun 2026, 03:51 PM SGT"
   },
   "prices": {
     "esso": {
@@ -9,15 +9,15 @@
       "ron95": 3.42,
       "ron98": 3.94,
       "premium": null,
-      "diesel": 4.22
+      "diesel": 4.12
     },
     "shell": {
       "name": "Shell",
       "ron92": null,
       "ron95": 3.42,
       "ron98": 3.94,
-      "premium": 3.94,
-      "diesel": 4.22
+      "premium": 4.16,
+      "diesel": 4.12
     },
     "spc": {
       "name": "SPC",
@@ -33,7 +33,7 @@
       "ron95": 3.42,
       "ron98": null,
       "premium": 4.12,
-      "diesel": 4.22
+      "diesel": 4.12
     },
     "sinopec": {
       "name": "Sinopec",
@@ -41,7 +41,7 @@
       "ron95": 3.42,
       "ron98": 3.93,
       "premium": 4.06,
-      "diesel": 4.16
+      "diesel": 4.06
     }
   }
 }
