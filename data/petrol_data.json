@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "01 Jul 2026, 01:50 AM SGT"
+    "lastUpdated": "01 Jul 2026, 04:09 PM SGT"
   },
   "prices": {
     "esso": {
@@ -25,7 +25,7 @@
       "ron95": 3.42,
       "ron98": 3.93,
       "premium": null,
-      "diesel": 4.17
+      "diesel": 4.05
     },
     "caltex": {
       "name": "Caltex",
