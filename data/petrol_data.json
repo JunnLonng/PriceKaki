@@ -1,23 +1,23 @@
 {
   "metadata": {
-    "lastUpdated": "15 Sep 2026, 04:08 AM SGT"
+    "lastUpdated": "15 Sep 2026, 05:10 PM SGT"
   },
   "prices": {
     "esso": {
       "name": "Esso",
-      "ron92": 3.34,
-      "ron95": 3.37,
-      "ron98": 3.89,
+      "ron92": 3.42,
+      "ron95": 3.45,
+      "ron98": 3.97,
       "premium": null,
-      "diesel": 3.95
+      "diesel": 4.03
     },
     "shell": {
       "name": "Shell",
       "ron92": null,
-      "ron95": 3.37,
-      "ron98": 3.89,
-      "premium": 4.11,
-      "diesel": 3.95
+      "ron95": 3.45,
+      "ron98": 3.97,
+      "premium": 4.19,
+      "diesel": 4.03
     },
     "spc": {
       "name": "SPC",
@@ -29,19 +29,19 @@
     },
     "caltex": {
       "name": "Caltex",
-      "ron92": 3.34,
-      "ron95": 3.37,
+      "ron92": 3.46,
+      "ron95": 3.49,
       "ron98": null,
-      "premium": 4.07,
-      "diesel": 4.05
+      "premium": 4.19,
+      "diesel": 4.07
     },
     "sinopec": {
       "name": "Sinopec",
       "ron92": null,
-      "ron95": 3.37,
-      "ron98": 3.88,
-      "premium": 4.01,
-      "diesel": 3.89
+      "ron95": 3.45,
+      "ron98": 3.96,
+      "premium": 4.09,
+      "diesel": 3.97
     }
   }
 }
