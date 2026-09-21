@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "21 Sep 2026, 02:27 AM SGT"
+    "lastUpdated": "21 Sep 2026, 05:33 PM SGT"
   },
   "prices": {
     "esso": {
@@ -21,11 +21,11 @@
     },
     "spc": {
       "name": "SPC",
-      "ron92": 3.34,
-      "ron95": 3.36,
-      "ron98": 3.88,
+      "ron92": 3.46,
+      "ron95": 3.48,
+      "ron98": 4.0,
       "premium": null,
-      "diesel": 3.89
+      "diesel": 3.97
     },
     "caltex": {
       "name": "Caltex",
@@ -38,10 +38,10 @@
     "sinopec": {
       "name": "Sinopec",
       "ron92": null,
-      "ron95": 3.45,
-      "ron98": 3.96,
-      "premium": 4.09,
-      "diesel": 3.97
+      "ron95": 3.49,
+      "ron98": 4.0,
+      "premium": 4.13,
+      "diesel": 4.01
     }
   }
 }
