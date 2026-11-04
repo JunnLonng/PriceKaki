@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "lastUpdated": "04 Nov 2026, 05:28 AM SGT"
+    "lastUpdated": "04 Nov 2026, 07:49 PM SGT"
   },
   "prices": {
     "esso": {
       "name": "Esso",
-      "ron92": 3.57,
-      "ron95": 3.6,
-      "ron98": 4.12,
+      "ron92": 3.6,
+      "ron95": 3.63,
+      "ron98": 4.15,
       "premium": null,
       "diesel": 4.07
     },
@@ -38,9 +38,9 @@
     "sinopec": {
       "name": "Sinopec",
       "ron92": null,
-      "ron95": 3.6,
-      "ron98": 4.11,
-      "premium": 4.24,
+      "ron95": 3.63,
+      "ron98": 4.14,
+      "premium": 4.27,
       "diesel": 4.01
     }
   }
