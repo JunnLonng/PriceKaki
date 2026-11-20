@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "lastUpdated": "20 Nov 2026, 06:53 AM SGT"
+    "lastUpdated": "20 Nov 2026, 08:28 PM SGT"
   },
   "prices": {
     "esso": {
       "name": "Esso",
-      "ron92": 3.6,
-      "ron95": 3.63,
-      "ron98": 4.15,
+      "ron92": 3.57,
+      "ron95": 3.6,
+      "ron98": 4.12,
       "premium": null,
-      "diesel": 4.07
+      "diesel": 4.04
     },
     "shell": {
       "name": "Shell",
